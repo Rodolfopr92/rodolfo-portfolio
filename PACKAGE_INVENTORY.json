@@ -1,0 +1,157 @@
+[
+  {
+    "path": ".github/workflows/pages.yml",
+    "bytes": 931,
+    "sha256": "acdd328017d1993b5d697196848af4604ddfa76b6bfbcd7e7c0fc369f3723339"
+  },
+  {
+    "path": ".nojekyll",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "ASSET_MAP.md",
+    "bytes": 548,
+    "sha256": "875f885d42f3374922322132075967104af257b19b3ae1d2feecfeff31e0894e"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 542,
+    "sha256": "e7bc972a5390ff3d62467d4656c67ae7d1f1425169d85c427bda43557cb3659d"
+  },
+  {
+    "path": "CNAME.example",
+    "bytes": 25,
+    "sha256": "52745ea91919e6d93e39b26f3d4733c15b495f8da987586b719c4ba13575eeec"
+  },
+  {
+    "path": "CODE_AUDIT.md",
+    "bytes": 1765,
+    "sha256": "d7c19668b5a730bd2240a1fc80c7860932cdcba8e9059f1757d95e4d5acebb4a"
+  },
+  {
+    "path": "DEPLOYMENT.md",
+    "bytes": 471,
+    "sha256": "e8481464e639910c7ef96bce7924022b2b3a50c1f162634e51fe6a078e34b013"
+  },
+  {
+    "path": "README.md",
+    "bytes": 687,
+    "sha256": "9b4e748d3db1e60f8bc92e5c605e6feae20c580aa6da93198e856cec15fe1aff"
+  },
+  {
+    "path": "VALIDATION.md",
+    "bytes": 874,
+    "sha256": "420f71e9fcba3b8d43ecbb5ac7a40e8a2aec3ed68896b9e59b892381a909aaee"
+  },
+  {
+    "path": "app.js",
+    "bytes": 23210,
+    "sha256": "a25c525c0639ec4847825e98eb5ee913ae2a2a55b7b592a29fc2c26c3effa42d"
+  },
+  {
+    "path": "assets/favicon.svg",
+    "bytes": 534,
+    "sha256": "7d5f05ca4c8ea42ed628b6e86319382bd0dcc6f2a0c1019fc8f693f908745236"
+  },
+  {
+    "path": "assets/portrait.webp",
+    "bytes": 32638,
+    "sha256": "12222acc3e998e856a8ad8a94153fc7c86d85d0c6d7414411813e9ada3a5eb84"
+  },
+  {
+    "path": "assets/project-ecommerce.webp",
+    "bytes": 94842,
+    "sha256": "afb8b3d24a4bc4bda25d1646fb7ddf9636e0e1606b12691741b812c64b89469f"
+  },
+  {
+    "path": "assets/project-finance.webp",
+    "bytes": 80618,
+    "sha256": "33c3b831bc3078cbfb7a67e844b7289b143306139dc089898dbaaa4e56e64769"
+  },
+  {
+    "path": "assets/project-inventory.webp",
+    "bytes": 104720,
+    "sha256": "4f4a0db0091f50254aa64229ebe61ae8a7fb20b7e236dd8578b22f882f57a4a8"
+  },
+  {
+    "path": "assets/project-migration.webp",
+    "bytes": 86246,
+    "sha256": "4a1075fbb00344adb1fd60ccd0ee79d76a7a3acc7b108a2cd336e017cdd6dd90"
+  },
+  {
+    "path": "assets/project-minus.webp",
+    "bytes": 108776,
+    "sha256": "44f3d96bfad4af00f71d718ec72ea953ec01ed0b337479628975406ca3e23ee2"
+  },
+  {
+    "path": "content.js",
+    "bytes": 12998,
+    "sha256": "c50c5177e670abac287847c2b9f2179977f471515398a39d17a741a0674cea86"
+  },
+  {
+    "path": "index.html",
+    "bytes": 14457,
+    "sha256": "85db484252d330ad3473b8563a00cbe5f52312dabd42d8b2bd5415b50fb8924b"
+  },
+  {
+    "path": "manifest.webmanifest",
+    "bytes": 362,
+    "sha256": "eb48ec74359b175281ea938446ec7ef5de36dba403a2d4fdf46a715ccd440d54"
+  },
+  {
+    "path": "qa/android-360.png",
+    "bytes": 362797,
+    "sha256": "d4830840cd404bd6bac72cfaa867bb8c6da5afeca83a990994b0f11a47f7537e"
+  },
+  {
+    "path": "qa/android-412.png",
+    "bytes": 457432,
+    "sha256": "6673d8e57511012cdae4f369bfe54d03f53d166b4fa77ee08a88712432be48f9"
+  },
+  {
+    "path": "qa/android-landscape.png",
+    "bytes": 442099,
+    "sha256": "bfd2d8bc1ac1799ec87a714f96b608cc88492dd8233eba4b2bb3927e283660fc"
+  },
+  {
+    "path": "qa/desktop.png",
+    "bytes": 1614290,
+    "sha256": "857ebe0bf7e57c6b4d0af2f5994abfeab6a1e487f57c40c87844ee5ac15c48a2"
+  },
+  {
+    "path": "qa/qa-results.json",
+    "bytes": 2456,
+    "sha256": "d871bf930bbb4bd86a1d5b492c63c2a1d45ef44203ead8899bfb0d6a4d971cac"
+  },
+  {
+    "path": "qa/tablet.png",
+    "bytes": 937651,
+    "sha256": "418ae06d19f4fe7c215192495927350c48fb87d58ed59407af06ac0c611b489c"
+  },
+  {
+    "path": "robots.txt",
+    "bytes": 23,
+    "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+  },
+  {
+    "path": "scripts/publish.sh",
+    "bytes": 1116,
+    "sha256": "827646e9d8fb4f123e7702364a7a78f23f436b277f2c6af733584b5ca668cfc4"
+  },
+  {
+    "path": "scripts/serve.sh",
+    "bytes": 171,
+    "sha256": "cf50ba773bd67328673b32346ea47de51f7198df88fbab68f93223701508a8ac"
+  },
+  {
+    "path": "scripts/validate_site.py",
+    "bytes": 2134,
+    "sha256": "a7e4b5b6a81a27d627d21b718fdedca10f88028d32f8da1471dcb22b7adb96d4"
+  },
+  {
+    "path": "styles.css",
+    "bytes": 87763,
+    "sha256": "ddd459a57e2d7e9f12b8d585947917178d1afa286a7466135a711ca89558d6ea"
+  }
+]

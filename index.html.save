@@ -1,0 +1,265 @@
+n
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Portfólio responsivo de Rodolfo P Rodrigues: modelagem financeira, controle de estoque, migração de planilhas e sistemas de decisão.">
+  <meta name="theme-color" content="#07111c">
+  <meta name="version" content="0.6.9">
+  <title>Rodolfo P Rodrigues · Portfólio</title>
+  <meta property="og:title" content="Rodolfo P Rodrigues · Portfólio">
+  <meta property="og:description" content="Modelagem financeira, controle de estoque, migração de dados e sistemas de decisão para pequenos negócios.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-identity" href="#inicio" aria-label="Voltar ao início">
+        <img src="assets/portrait.webp" alt="" aria-hidden="true" width="720" height="720">
+        <strong>Rodolfo P Rodrigues</strong>
+      </a>
+
+      <div class="header-utilities" aria-label="Idioma e canais de contato">
+        <div id="languageToggle" class="language-switch language-switch-header" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-pressed="true" aria-label="Português do Brasil">
+            <svg class="flag-glyph flag-glyph-br" viewBox="0 0 28 18" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="25" height="15" rx="3"></rect>
+              <path d="M14 4.2 21.2 9 14 13.8 6.8 9Z"></path>
+              <circle cx="14" cy="9" r="2.35"></circle>
+            </svg>
+            <span>PT</span>
+          </button>
+          <button type="button" data-lang="en" aria-pressed="false" aria-label="English, international">
+            <svg class="flag-glyph globe-glyph" viewBox="0 0 28 18" aria-hidden="true">
+              <circle cx="14" cy="9" r="7"></circle>
+              <path d="M7 9h14M14 2c2.1 2 3.2 4.3 3.2 7S16.1 14 14 16M14 2c-2.1 2-3.2 4.3-3.2 7S11.9 14 14 16"></path>
+            </svg>
+            <span>EN</span>
+          </button>
+        </div>
+        <span class="header-utility-divider" aria-hidden="true"></span>
+        <div id="headerContacts" class="header-contact-row" aria-label="Canais de contato"></div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <div id="siteToast" class="site-toast" role="status" aria-live="polite"></div>
+
+  <main id="inicio">
+    <!-- DESKTOP COMMAND CENTER -->
+    <section class="layout desktop-command" aria-label="Portfólio desktop">
+      <article class="hero-board">
+        <section class="panel projects-panel hero-projects-panel" id="projetos">
+          <header class="panel-heading project-deck-heading">
+            <div>
+              <p class="overline" data-i18n="featuredProjects">Projetos em destaque</p>
+              <h3>Trabalho que pode ser demonstrado.</h3>
+            </div>
+            <div id="desktopProjectFilters" class="filter-group"></div>
+          </header>
+          <div class="classic-deck-shell">
+            <button id="projectPrev" class="classic-deck-arrow classic-deck-prev" type="button" data-i18n-aria="previousProjects" aria-label="Projetos anteriores">‹</button>
+            <div class="project-deck-viewport">
+              <div id="desktopProjects" class="project-deck classic-project-deck" aria-live="polite"></div>
+            </div>
+            <button id="projectNext" class="classic-deck-arrow classic-deck-next" type="button" data-i18n-aria="nextProjects" aria-label="Próximos projetos">›</button>
+          </div>
+          <div id="projectDeckDots" class="classic-deck-dots" aria-label="Selecionar projeto"></div>
+        </section>
+        <img class="portrait portrait-desktop" src="assets/portrait.webp" alt="Retrato de Rodolfo P Rodrigues">
+      </article>
+
+      <section class="identity-grid" id="visao">
+        <article class="profile-panel panel">
+          <div>
+            <p class="overline">Rodolfo P Rodrigues</p>
+            <h2 data-copy="role">Consultor em sistemas financeiros e operacionais</h2>
+            <p data-copy="location">Florianópolis · atendimento remoto</p>
+          </div>
+          <div class="profile-action-stack">
+            <div class="profile-actions">
+              <a class="cta" href="https://example.com/diagnostico" target="_blank" rel="noreferrer" data-i18n="diagnosis">Solicitar diagnóstico</a>
+              <button class="button-secondary" data-scroll="#projetos" type="button" data-i18n="viewProjects">Ver projetos</button>
+              <a class="button-ghost" href="https://example.com" target="_blank" rel="noreferrer" data-i18n="commercialSite">Site comercial ↗</a>
+            </div>
+          </div>
+        </article>
+        <aside class="metrics-panel panel">
+          <header><span data-i18n="distributionProof">Prova de distribuição</span><small data-i18n="last365">últimos 365 dias</small></header>
+          <div class="metrics-grid" id="desktopMetrics"></div>
+        </aside>
+      </section>
+
+      <section class="command-grid">
+        <article class="panel about-panel">
+          <p class="overline" data-i18n="about">Sobre</p>
+          <h3>Operação prática, modelagem rigorosa e software modular.</h3>
+          <p>Conecto finanças, estoque, migração de dados e automação analítica para resolver problemas reais de pequenos negócios.</p>
+          <ul>
+            <li>Preços sem visão real da margem</li>
+            <li>Estoque controlado por arquivos divergentes</li>
+            <li>Dados espalhados em planilhas incompatíveis</li>
+            <li>Decisões sem visão clara de caixa e risco</li>
+          </ul>
+        </article>
+
+        <article class="panel deliver-panel" id="servicos">
+          <p class="overline" data-i18n="deliver">O que entrego</p>
+          <div id="desktopDeliverables" class="deliver-list"></div>
+        </article>
+
+        <aside class="panel service-cta">
+          <div class="target-mark">◎</div>
+          <p class="overline" data-i18n="services">Serviços</p>
+          <h3>Do diagnóstico à implementação.</h3>
+          <p>Projetos personalizados para organizar números, estoque e decisões.</p>
+          <a href="https://example.com/diagnostico" target="_blank" rel="noreferrer" data-i18n="knowProcess">Conhecer o processo ↗</a>
+        </aside>
+
+      </section>
+
+      <section class="method-board panel" id="metodo">
+        <header class="panel-heading">
+          <div><p class="overline" data-i18n="workMethod">Método de trabalho</p><h3>Uma sequência clara, sem caixa-preta.</h3></div>
+          <a class="button-ghost" href="https://example.com/diagnostico" target="_blank" rel="noreferrer" data-i18n="applyBusiness">Aplicar ao seu negócio ↗</a>
+        </header>
+        <div id="desktopMethod" class="method-track"></div>
+      </section>
+    </section>
+
+    <!-- TABLET CONSOLE -->
+    <section class="layout tablet-console" aria-label="Portfólio tablet">
+      <article class="tablet-hero">
+        <div class="tablet-copy">
+          <p class="overline" data-i18n="consultingImplementation">Consultoria + implementação</p>
+          <h1>Da planilha à <em>operação confiável.</em></h1>
+          <p data-copy="headline">Transformo planilhas dispersas em sistemas confiáveis de margem, estoque e decisão.</p>
+          <div class="hero-actions">
+            <a class="cta" href="https://example.com/diagnostico" target="_blank" rel="noreferrer" data-i18n="diagnosis">Solicitar diagnóstico</a>
+            <button class="button-secondary" data-scroll="#tabletProjects" type="button" data-i18n="viewProjects">Ver projetos</button>
+          </div>
+        </div>
+        <div id="tabletFeaturedProject" class="tablet-featured-slot" aria-label="Projeto em destaque"></div>
+        <img class="portrait portrait-tablet" src="assets/portrait.webp" alt="Retrato de Rodolfo P Rodrigues">
+      </article>
+
+      <section class="tablet-identity panel">
+        <div><p class="overline">Rodolfo P Rodrigues</p><h2 data-copy="role">Consultor em sistemas financeiros e operacionais</h2></div>
+        <div class="tablet-action-stack">
+          <a class="button-ghost" href="https://example.com" target="_blank" rel="noreferrer" data-i18n="commercialSite">Site comercial ↗</a>
+        </div>
+      </section>
+
+      <section class="metrics-band panel" id="tabletMetrics"></section>
+
+      <section class="tablet-tabs panel">
+        <div class="tab-list" role="tablist" aria-label="Conteúdo do portfólio">
+          <button role="tab" aria-selected="true" data-tab="overview" data-i18n="navOverview">Visão</button>
+          <button role="tab" aria-selected="false" data-tab="services" data-i18n="navServices">Serviços</button>
+          <button role="tab" aria-selected="false" data-tab="method" data-i18n="navMethod">Método</button>
+        </div>
+        <div class="tablet-tab-panel" data-panel="overview">
+          <div class="tablet-about"><h3>O problema que resolvo</h3><p>Organizo custos, estoque e dados para que a operação possa ser medida, compreendida e melhorada.</p></div>
+          <div class="tablet-deliver" id="tabletDeliverables"></div>
+        </div>
+        <div class="tablet-tab-panel" data-panel="services" hidden>
+          <div class="tablet-service-grid" id="tabletServices"></div>
+        </div>
+        <div class="tablet-tab-panel" data-panel="method" hidden>
+          <div class="tablet-method-grid" id="tabletMethod"></div>
+        </div>
+      </section>
+
+      <section class="panel tablet-projects" id="tabletProjects">
+        <header class="panel-heading"><div><p class="overline">Projetos</p><h3>Casos e demonstrações</h3></div></header>
+        <div id="tabletProjectStrip" class="horizontal-scroll"></div>
+      </section>
+
+      <section class="tablet-bottom-grid">
+        <article class="panel"><p class="overline" data-i18n="experience">Experiência</p><div id="tabletExperience"></div></article>
+        <article class="panel commercial-bridge"><p class="overline">Próximo passo</p><h3>Leve o diagnóstico para o site comercial.</h3><a class="cta" href="https://example.com/diagnostico" data-i18n="diagnosis">Solicitar diagnóstico</a></article>
+      </section>
+    </section>
+
+    <!-- MOBILE DOSSIER -->
+    <section class="layout mobile-dossier" aria-label="Portfólio mobile">
+      <article class="mobile-hero">
+        <div id="mobileFeaturedProject" class="mobile-featured-slot" aria-label="Projeto em destaque"></div>
+        <div class="mobile-hero-shade"></div>
+        <img class="portrait portrait-mobile" src="assets/portrait.webp" alt="Retrato de Rodolfo P Rodrigues">
+      </article>
+
+      <section class="mobile-identity">
+        <p class="overline">Rodolfo P Rodrigues</p>
+        <h1 data-copy="role">Consultor em sistemas financeiros e operacionais</h1>
+        <p data-copy="headline">Transformo planilhas dispersas em sistemas confiáveis de margem, estoque e decisão.</p>
+        <div class="mobile-actions">
+          <a class="cta cta-diagnosis" href="https://example.com/diagnostico" data-i18n="diagnosis">Solicitar diagnóstico</a>
+          <a class="button-secondary" href="#mobileProjects" data-i18n="viewProjects">Ver projetos</a>
+        </div>
+      </section>
+
+      <section class="mobile-metrics" id="mobileMetrics"></section>
+
+      <nav class="mobile-tabbar" aria-label="Seções">
+        <button aria-selected="true" data-mobile-tab="overview" data-i18n="navOverview">Visão</button>
+        <button aria-selected="false" data-mobile-tab="services" data-i18n="navServices">Serviços</button>
+        <button aria-selected="false" data-mobile-tab="projects" data-i18n="navProjects">Projetos</button>
+      </nav>
+
+      <section class="mobile-panel" data-mobile-panel="overview">
+        <article class="panel compact-panel">
+          <p class="overline" data-i18n="whatISolve">O que resolvo</p>
+          <h2 data-i18n="clearNumbers">Números claros. Estoque sob controle. Decisões com segurança.</h2>
+          <ul><li>Margem e preço</li><li>Movimentações e reposição</li><li>Planilhas e cadastros</li><li>Dashboards e implementação</li></ul>
+        </article>
+        <article class="panel compact-panel">
+          <p class="overline" data-i18n="experience">Experiência</p>
+          <div id="mobileExperience"></div>
+        </article>
+      </section>
+
+      <section class="mobile-panel" data-mobile-panel="services" hidden>
+        <div id="mobileServices" class="mobile-service-list"></div>
+      </section>
+
+      <section class="mobile-panel" data-mobile-panel="projects" hidden id="mobileProjects">
+        <div id="mobileProjectStrip" class="mobile-project-list"></div>
+      </section>
+
+      <section class="panel mobile-method">
+        <p class="overline" data-i18n="method">Método</p>
+        <div id="mobileMethod"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Rodolfo P Rodrigues</strong><span data-i18n="footerFocus">Modelagem financeira · estoque · migração de dados</span></div>
+    <div id="footerContacts" class="footer-contacts" aria-label="Canais de contato"></div>
+  </footer>
+
+  <dialog id="projectModal" class="project-modal">
+    <button id="modalClose" class="modal-close" aria-label="Fechar">×</button>
+    <img id="modalImage" alt="">
+    <div><p id="modalTag" class="overline"></p><h2 id="modalTitle"></h2><p id="modalDetail"></p><a id="modalLink" class="cta" target="_blank" rel="noreferrer" data-i18n="knowSolution">Conhecer a solução ↗</a></div>
+  </dialog>
+
+  <a class="mobile-sticky-cta" href="https://example.com/diagnostico" data-i18n="diagnosis">Solicitar diagnóstico</a>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

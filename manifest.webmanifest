@@ -1,0 +1,17 @@
+{
+  "name": "Rodolfo P Rodrigues · Developer Portfolio",
+  "short_name": "Rodolfo Portfolio",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#030b13",
+  "theme_color": "#07111c",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
