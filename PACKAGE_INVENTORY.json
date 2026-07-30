@@ -16,8 +16,8 @@
   },
   {
     "path": "CHANGELOG.md",
-    "bytes": 542,
-    "sha256": "e7bc972a5390ff3d62467d4656c67ae7d1f1425169d85c427bda43557cb3659d"
+    "bytes": 450,
+    "sha256": "5f36fe477302f85b344f3c2a151b3a3e107d5698c509aab7ade244e3803186ae"
   },
   {
     "path": "CNAME.example",
@@ -36,18 +36,18 @@
   },
   {
     "path": "README.md",
-    "bytes": 687,
-    "sha256": "9b4e748d3db1e60f8bc92e5c605e6feae20c580aa6da93198e856cec15fe1aff"
+    "bytes": 452,
+    "sha256": "2c4ce1bab809dbd596d7fac640f8cf0f13c1989ec5d086a7c4ab7667b734b2ad"
   },
   {
     "path": "VALIDATION.md",
-    "bytes": 874,
-    "sha256": "420f71e9fcba3b8d43ecbb5ac7a40e8a2aec3ed68896b9e59b892381a909aaee"
+    "bytes": 623,
+    "sha256": "27ab1668c8958d96a413b53057901e399c5cb555ec03a23722f6da24f5463f00"
   },
   {
     "path": "app.js",
-    "bytes": 23210,
-    "sha256": "a25c525c0639ec4847825e98eb5ee913ae2a2a55b7b592a29fc2c26c3effa42d"
+    "bytes": 15256,
+    "sha256": "39ab84acad0d6267680f127e8cad05ae8c8a2460fd4e6dede611483794699d5b"
   },
   {
     "path": "assets/favicon.svg",
@@ -60,9 +60,19 @@
     "sha256": "12222acc3e998e856a8ad8a94153fc7c86d85d0c6d7414411813e9ada3a5eb84"
   },
   {
+    "path": "assets/project-ecommerce-mobile.webp",
+    "bytes": 14996,
+    "sha256": "80710db89882bbc2d9c245c5f8cfefa6006a3e2ee4c0947841a09fb09be62191"
+  },
+  {
     "path": "assets/project-ecommerce.webp",
     "bytes": 94842,
     "sha256": "afb8b3d24a4bc4bda25d1646fb7ddf9636e0e1606b12691741b812c64b89469f"
+  },
+  {
+    "path": "assets/project-finance-mobile.webp",
+    "bytes": 13490,
+    "sha256": "254872d904f5cbce49ead9eb0b4e22f43e19a2b2590dfc96220f1dd244540aba"
   },
   {
     "path": "assets/project-finance.webp",
@@ -70,14 +80,29 @@
     "sha256": "33c3b831bc3078cbfb7a67e844b7289b143306139dc089898dbaaa4e56e64769"
   },
   {
+    "path": "assets/project-inventory-mobile.webp",
+    "bytes": 17026,
+    "sha256": "7864e80e343057eb5521b10fc0fc159739e7f4a08eb25bedd6a9dd590945377f"
+  },
+  {
     "path": "assets/project-inventory.webp",
     "bytes": 104720,
     "sha256": "4f4a0db0091f50254aa64229ebe61ae8a7fb20b7e236dd8578b22f882f57a4a8"
   },
   {
+    "path": "assets/project-migration-mobile.webp",
+    "bytes": 13356,
+    "sha256": "510d77fffb293390dc9efc1fc5faffd79a0c882949f977ac12477775139e62eb"
+  },
+  {
     "path": "assets/project-migration.webp",
     "bytes": 86246,
     "sha256": "4a1075fbb00344adb1fd60ccd0ee79d76a7a3acc7b108a2cd336e017cdd6dd90"
+  },
+  {
+    "path": "assets/project-minus-mobile.webp",
+    "bytes": 16664,
+    "sha256": "f172a966adca807f2a546f788f7978d51a4de8aee9048c0996546b4f87fb08ba"
   },
   {
     "path": "assets/project-minus.webp",
@@ -86,48 +111,43 @@
   },
   {
     "path": "content.js",
-    "bytes": 12998,
-    "sha256": "c50c5177e670abac287847c2b9f2179977f471515398a39d17a741a0674cea86"
+    "bytes": 13279,
+    "sha256": "3e5462ba20ffac8facf699c21f63856bb54e8c0dfe389a63be94017bd32e5660"
   },
   {
     "path": "index.html",
-    "bytes": 14457,
-    "sha256": "85db484252d330ad3473b8563a00cbe5f52312dabd42d8b2bd5415b50fb8924b"
+    "bytes": 14298,
+    "sha256": "040eb54b61706313b29bf5113bce0e688bbf9045507df13b350abc1f40b9c7e2"
   },
   {
     "path": "manifest.webmanifest",
-    "bytes": 362,
-    "sha256": "eb48ec74359b175281ea938446ec7ef5de36dba403a2d4fdf46a715ccd440d54"
+    "bytes": 350,
+    "sha256": "8185d6a3ac40bdbf195f77b86ff732896b0912281bb6b6f176de34effc742efb"
   },
   {
-    "path": "qa/android-360.png",
-    "bytes": 362797,
-    "sha256": "d4830840cd404bd6bac72cfaa867bb8c6da5afeca83a990994b0f11a47f7537e"
+    "path": "reports/BROWSER_QA.json",
+    "bytes": 2178,
+    "sha256": "25071938aeebb2e564ec1bc5e61be077ade76103421d25fddb998c0c70660cd2"
   },
   {
-    "path": "qa/android-412.png",
-    "bytes": 457432,
-    "sha256": "6673d8e57511012cdae4f369bfe54d03f53d166b4fa77ee08a88712432be48f9"
+    "path": "reports/MOBILE_PERFORMANCE_AUDIT.md",
+    "bytes": 2385,
+    "sha256": "944648c1503d841711ecc6fe251f19a8a170cd98ac08499a61e9ad1920cbac27"
   },
   {
-    "path": "qa/android-landscape.png",
-    "bytes": 442099,
-    "sha256": "bfd2d8bc1ac1799ec87a714f96b608cc88492dd8233eba4b2bb3927e283660fc"
+    "path": "reports/desktop.png",
+    "bytes": 945384,
+    "sha256": "38ac5a79ba99b0b81abe09a4ce026db210f808a1a611761a5412cc7c683320fb"
   },
   {
-    "path": "qa/desktop.png",
-    "bytes": 1614290,
-    "sha256": "857ebe0bf7e57c6b4d0af2f5994abfeab6a1e487f57c40c87844ee5ac15c48a2"
+    "path": "reports/mobile-360.png",
+    "bytes": 189496,
+    "sha256": "93a92a3238936794895a4090002c216b659485716a7ebbce5ede0d0a4ee6c78b"
   },
   {
-    "path": "qa/qa-results.json",
-    "bytes": 2456,
-    "sha256": "d871bf930bbb4bd86a1d5b492c63c2a1d45ef44203ead8899bfb0d6a4d971cac"
-  },
-  {
-    "path": "qa/tablet.png",
-    "bytes": 937651,
-    "sha256": "418ae06d19f4fe7c215192495927350c48fb87d58ed59407af06ac0c611b489c"
+    "path": "reports/mobile-412.png",
+    "bytes": 251547,
+    "sha256": "729a053f79f91279603c11f6fbe52c6634ea015677ebf445a9cb766ae14ca4a6"
   },
   {
     "path": "robots.txt",
@@ -145,13 +165,18 @@
     "sha256": "cf50ba773bd67328673b32346ea47de51f7198df88fbab68f93223701508a8ac"
   },
   {
+    "path": "scripts/update_existing_repo.sh",
+    "bytes": 712,
+    "sha256": "d8b41ae24acedfb13df4bb675a3abd978402ef12de5506e92effe5d1c3bbe5fb"
+  },
+  {
     "path": "scripts/validate_site.py",
     "bytes": 2134,
     "sha256": "a7e4b5b6a81a27d627d21b718fdedca10f88028d32f8da1471dcb22b7adb96d4"
   },
   {
     "path": "styles.css",
-    "bytes": 87763,
-    "sha256": "ddd459a57e2d7e9f12b8d585947917178d1afa286a7466135a711ca89558d6ea"
+    "bytes": 94168,
+    "sha256": "565efc612cdf0bf3e6aa8bc4500bff43c77d4a33b21c9128810db0e88551a64d"
   }
 ]

@@ -1,31 +1,18 @@
-# Validation
+# Validation — v0.7.0 Mobile Fast
 
-## Static checks
+Passed:
 
-- JavaScript syntax passed.
-- HTML references and duplicate IDs passed.
-- CSS brace balance passed.
-- All project banners meet the minimum dimensions.
-- GitHub Pages workflow contains separate build and deploy jobs.
-- Desktop navigation, mobile drawer, desktop Experience card, and duplicated responsive contact rows are absent.
+- JavaScript syntax for `app.js` and `content.js`.
+- Local HTML references.
+- CSS brace balance.
+- Chromium desktop render at 1833 × 900.
+- Chromium Android renders at 360 × 800 and 412 × 915.
+- No page errors during the render pass.
+- No horizontal overflow.
+- Project-first mobile opening view.
+- Sticky header without portrait.
+- Floating circular diagnosis action.
+- Active-layout-only dynamic rendering.
+- Mobile project images use dedicated 960 × 360 WebP sources.
 
-## Browser QA
-
-Validated in Chromium at:
-
-- Desktop: 1833 × 900
-- Tablet: 900 × 1000
-- Android portrait: 360 × 800
-- Android portrait: 412 × 915
-- Android landscape: 915 × 412
-
-At every viewport:
-
-- no horizontal overflow;
-- header utilities remain inside the viewport;
-- no console or page errors;
-- language switching works;
-- carousel or responsive tabs work;
-- project modal or responsive panel switching works.
-
-Desktop header icons are horizontally aligned. Android header targets are at least 38 px.
+Performance comparison: 691 → 396 DOM nodes and 23 → 2 opening-view loaded images at 360 × 800.

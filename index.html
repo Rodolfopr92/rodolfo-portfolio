@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="Portfólio responsivo de Rodolfo P Rodrigues: modelagem financeira, controle de estoque, migração de planilhas e sistemas de decisão.">
   <meta name="theme-color" content="#07111c">
-  <meta name="version" content="0.6.9">
+  <meta name="version" content="0.7.0">
   <title>Rodolfo P Rodrigues · Portfólio</title>
   <meta property="og:title" content="Rodolfo P Rodrigues · Portfólio">
   <meta property="og:description" content="Modelagem financeira, controle de estoque, migração de dados e sistemas de decisão para pequenos negócios.">
@@ -13,19 +13,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand-identity" href="#inicio" aria-label="Voltar ao início">
-        <img src="assets/portrait.webp" alt="" aria-hidden="true" width="720" height="720">
-        <strong>Rodolfo P Rodrigues</strong>
+        <span class="brand-copy">
+          <strong>Rodolfo Rodrigues</strong>
+          <small data-copy="role">Consultor em sistemas logísticos e financeiros</small>
+        </span>
       </a>
 
       <div class="header-utilities" aria-label="Idioma e canais de contato">
@@ -77,7 +74,7 @@
           </div>
           <div id="projectDeckDots" class="classic-deck-dots" aria-label="Selecionar projeto"></div>
         </section>
-        <img class="portrait portrait-desktop" src="assets/portrait.webp" alt="Retrato de Rodolfo P Rodrigues">
+        <img class="portrait portrait-desktop" src="assets/portrait.webp" loading="lazy" decoding="async" alt="Retrato de Rodolfo P Rodrigues">
       </article>
 
       <section class="identity-grid" id="visao">
@@ -151,7 +148,7 @@
           </div>
         </div>
         <div id="tabletFeaturedProject" class="tablet-featured-slot" aria-label="Projeto em destaque"></div>
-        <img class="portrait portrait-tablet" src="assets/portrait.webp" alt="Retrato de Rodolfo P Rodrigues">
+        <img class="portrait portrait-tablet" src="assets/portrait.webp" loading="lazy" decoding="async" alt="Retrato de Rodolfo P Rodrigues">
       </article>
 
       <section class="tablet-identity panel">
@@ -192,33 +189,30 @@
       </section>
     </section>
 
-    <!-- MOBILE DOSSIER -->
+    <!-- MOBILE PROJECT-FIRST DOSSIER -->
     <section class="layout mobile-dossier" aria-label="Portfólio mobile">
-      <article class="mobile-hero">
+      <section class="mobile-projects-hero" aria-label="Projetos em destaque">
+        <header class="mobile-projects-heading">
+          <p class="overline" data-i18n="featuredProjects">Projetos em destaque</p>
+          <h1>Trabalho que pode ser demonstrado.</h1>
+        </header>
         <div id="mobileFeaturedProject" class="mobile-featured-slot" aria-label="Projeto em destaque"></div>
-        <div class="mobile-hero-shade"></div>
-        <img class="portrait portrait-mobile" src="assets/portrait.webp" alt="Retrato de Rodolfo P Rodrigues">
-      </article>
-
-      <section class="mobile-identity">
-        <p class="overline">Rodolfo P Rodrigues</p>
-        <h1 data-copy="role">Consultor em sistemas financeiros e operacionais</h1>
-        <p data-copy="headline">Transformo planilhas dispersas em sistemas confiáveis de margem, estoque e decisão.</p>
-        <div class="mobile-actions">
-          <a class="cta cta-diagnosis" href="https://example.com/diagnostico" data-i18n="diagnosis">Solicitar diagnóstico</a>
-          <a class="button-secondary" href="#mobileProjects" data-i18n="viewProjects">Ver projetos</a>
-        </div>
       </section>
 
       <section class="mobile-metrics" id="mobileMetrics"></section>
 
       <nav class="mobile-tabbar" aria-label="Seções">
         <button aria-selected="true" data-mobile-tab="overview" data-i18n="navOverview">Visão</button>
-        <button aria-selected="false" data-mobile-tab="services" data-i18n="navServices">Serviços</button>
         <button aria-selected="false" data-mobile-tab="projects" data-i18n="navProjects">Projetos</button>
+        <button aria-selected="false" data-mobile-tab="services" data-i18n="navServices">Serviços</button>
       </nav>
 
       <section class="mobile-panel" data-mobile-panel="overview">
+        <article class="panel compact-panel mobile-profile-card">
+          <p class="overline">Rodolfo Rodrigues</p>
+          <h2 data-copy="role">Consultor em sistemas logísticos e financeiros</h2>
+          <p data-copy="headline">Transformo planilhas dispersas em sistemas confiáveis de margem, estoque e decisão.</p>
+        </article>
         <article class="panel compact-panel">
           <p class="overline" data-i18n="whatISolve">O que resolvo</p>
           <h2 data-i18n="clearNumbers">Números claros. Estoque sob controle. Decisões com segurança.</h2>
@@ -230,12 +224,12 @@
         </article>
       </section>
 
-      <section class="mobile-panel" data-mobile-panel="services" hidden>
-        <div id="mobileServices" class="mobile-service-list"></div>
-      </section>
-
       <section class="mobile-panel" data-mobile-panel="projects" hidden id="mobileProjects">
         <div id="mobileProjectStrip" class="mobile-project-list"></div>
+      </section>
+
+      <section class="mobile-panel" data-mobile-panel="services" hidden>
+        <div id="mobileServices" class="mobile-service-list"></div>
       </section>
 
       <section class="panel mobile-method">
@@ -256,7 +250,9 @@
     <div><p id="modalTag" class="overline"></p><h2 id="modalTitle"></h2><p id="modalDetail"></p><a id="modalLink" class="cta" target="_blank" rel="noreferrer" data-i18n="knowSolution">Conhecer a solução ↗</a></div>
   </dialog>
 
-  <a class="mobile-sticky-cta" href="https://example.com/diagnostico" data-i18n="diagnosis">Solicitar diagnóstico</a>
+  <a class="mobile-sticky-cta" href="https://example.com/diagnostico" aria-label="Solicitar diagnóstico" title="Solicitar diagnóstico">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m15 9 6-6"/></svg>
+  </a>
 
   <script src="content.js"></script>
   <script src="app.js"></script>

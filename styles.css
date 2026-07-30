@@ -2261,3 +2261,92 @@ html,body{overflow-x:clip}
     flex-basis:38px!important;width:38px!important;min-width:38px!important;height:38px!important;
   }
 }
+
+
+/* ==========================================================
+   v0.7.0 Mobile performance and project-first layout
+   ========================================================== */
+:root{
+  --font-body:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.brand-identity{display:flex;align-items:center;min-width:0}
+.brand-copy{display:grid;gap:2px;min-width:0}
+.brand-copy strong{font-size:1rem;line-height:1.05;white-space:nowrap}
+.brand-copy small{color:#aebbc4;font-size:.68rem;line-height:1.15;white-space:nowrap}
+
+@media(max-width:767px){
+  :root{--header-height:86px}
+  body{padding-bottom:78px;background:linear-gradient(180deg,#02080e,#061421 52%,#02080e)}
+  .topbar{height:var(--header-height);padding:6px 10px 5px;background:#06101af7;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .topbar-inner{display:grid;grid-template-columns:1fr;grid-template-rows:31px 40px;gap:4px;align-content:center}
+  .brand-identity{justify-self:center;text-align:center}
+  .brand-copy{gap:1px}
+  .brand-copy strong{font-size:.86rem}
+  .brand-copy small{font-size:.61rem;max-width:330px;overflow:hidden;text-overflow:ellipsis}
+  .header-utilities{width:100%;justify-content:center;gap:5px}
+  .header-utility-divider{height:24px;margin-inline:1px}
+  .language-switch-header{height:36px;padding:2px;border-radius:10px;backdrop-filter:none!important}
+  .language-switch-header button{width:36px;min-width:36px;height:32px;padding:0 4px;gap:3px}
+  .language-switch-header button span{display:none}
+  .language-switch-header .flag-glyph{width:17px;height:12px}
+  .header-contact-row{gap:5px!important}
+  .header-contact-row .contact-button{flex-basis:34px!important;width:34px!important;min-width:34px!important;height:34px!important;border-radius:10px!important;box-shadow:none!important}
+  .header-contact-row .contact-button svg{width:17px!important;height:17px!important}
+  .scroll-progress{top:var(--header-height)}
+  .mobile-dossier{padding-top:0}
+  .mobile-projects-hero{padding:17px 12px 12px;background:radial-gradient(circle at 85% 0,rgba(217,161,62,.10),transparent 32%)}
+  .mobile-projects-heading{padding:0 4px 12px}
+  .mobile-projects-heading h1{margin:0;color:#f4f7f8;font-size:1.42rem;line-height:1.08;letter-spacing:-.035em}
+  .mobile-featured-slot{height:285px;margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(82,219,233,.19);box-shadow:0 18px 40px rgba(0,0,0,.38)}
+  .mobile-featured-slot .hero-project-card{height:100%;border-radius:0;box-shadow:none!important}
+  .mobile-featured-slot .hero-project-card img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .mobile-featured-slot .hero-project-copy{left:10px;right:10px;bottom:10px;padding:11px 12px;background:rgba(4,14,23,.88)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-radius:12px}
+  .mobile-featured-slot .hero-project-copy strong{font-size:.98rem;line-height:1.12}
+  .mobile-featured-slot .hero-project-copy small{font-size:.68rem;line-height:1.4}
+  .mobile-featured-slot .hero-project-badge{top:12px;left:12px}
+  .mobile-metrics{padding:0 12px 12px}
+  .mobile-tabbar{top:var(--header-height)!important;background:#06101af8!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:0 8px 20px rgba(0,0,0,.26)!important}
+  .mobile-tabbar button{min-height:42px}
+  .mobile-panel{padding:10px 12px}
+  .mobile-panel,.mobile-method,.mobile-service-card,.compact-panel{content-visibility:auto;contain-intrinsic-size:420px;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .mobile-profile-card h2{margin:.25rem 0 .6rem;font-size:1.35rem;line-height:1.12;letter-spacing:-.035em}
+  .mobile-profile-card p:last-child{color:#c0cbd2;line-height:1.6}
+  .mobile-project-list{gap:10px}
+  .mobile-project-list .project-card{content-visibility:auto;contain-intrinsic-size:300px}
+  .mobile-project-list .project-card img{height:146px;object-position:center top}
+  .mobile-method{margin-bottom:28px}
+  .mobile-sticky-cta{left:auto!important;right:14px!important;bottom:calc(14px + env(safe-area-inset-bottom))!important;width:58px!important;height:58px!important;border-radius:50%!important;padding:0!important;box-shadow:0 16px 38px rgba(0,0,0,.52),0 0 0 1px rgba(255,224,148,.22)!important}
+  .mobile-sticky-cta svg{width:25px;height:25px}
+  .mobile-sticky-cta:active{transform:scale(.94)!important}
+  .project-copy-glass,.project-modal{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .motion-ready .reveal,.motion-ready .reveal:not(.is-visible){opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+  .panel:hover,.project-card:hover,.mobile-service-card:hover{transform:none!important}
+  .grain,.grain:before,.grain:after{display:none!important}
+  .ambient-orb,.hero-art,.project-card:after{animation:none!important}
+}
+@media(max-width:374px){
+  .header-utility-divider{display:none}
+  .header-contact-row{gap:4px!important}
+  .header-contact-row .contact-button{flex-basis:32px!important;width:32px!important;min-width:32px!important;height:32px!important}
+  .language-switch-header button{width:33px;min-width:33px}
+  .mobile-featured-slot{height:260px}
+}
+@media(max-width:900px) and (orientation:landscape){
+  :root{--header-height:62px}
+  .topbar-inner{display:flex;grid-template:none;justify-content:space-between;gap:8px}
+  .brand-identity{justify-self:auto;text-align:left}
+  .brand-copy small{display:none}
+  .header-utilities{width:auto}
+}
+
+/* v0.7.0 mobile positioning corrections */
+@media(max-width:767px){
+  .topbar{position:fixed!important;top:0;left:0;right:0}
+  main{padding-top:var(--header-height)}
+  .mobile-featured-slot{position:relative!important;inset:auto!important;display:block!important}
+  .mobile-featured-slot .hero-project-copy{left:10px!important;right:10px!important;bottom:10px!important;gap:5px!important}
+  .mobile-featured-slot .hero-project-copy small{display:-webkit-box!important;color:#d9e2e7!important;-webkit-line-clamp:2!important}
+  .mobile-featured-slot .hero-project-copy em{color:var(--gold2)!important;font-size:.64rem!important}
+  .mobile-featured-slot .hero-project-badge{left:12px!important;right:auto!important;top:12px!important}
+}

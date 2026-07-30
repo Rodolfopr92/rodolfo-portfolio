@@ -4,8 +4,8 @@ window.PORTFOLIO = {
   profile: {
     name: "Rodolfo P Rodrigues",
     role: {
-      pt: "Consultor em sistemas financeiros e operacionais",
-      en: "Financial and operational systems consultant"
+      pt: "Consultor em sistemas logísticos e financeiros",
+      en: "Logistics and financial systems consultant"
     },
     headline: {
       pt: "Transformo planilhas dispersas em sistemas confiáveis de margem, estoque e decisão.",
@@ -142,6 +142,7 @@ window.PORTFOLIO = {
       category:"finance",
       accent:"gold",
       image:"assets/project-finance.webp",
+      mobileImage:"assets/project-finance-mobile.webp",
       tag:{pt:"CASTOR · FINANCEIRO",en:"CASTOR · FINANCE"},
       title:{pt:"Castor · inteligência financeira",en:"Castor · financial intelligence"},
       summary:{pt:"Custos, preço, margem, ponto de equilíbrio, caixa e cenários.",en:"Costs, pricing, margin, break-even, cash and scenarios."},
@@ -153,6 +154,7 @@ window.PORTFOLIO = {
       category:"inventory",
       accent:"cyan",
       image:"assets/project-inventory.webp",
+      mobileImage:"assets/project-inventory-mobile.webp",
       tag:{pt:"DAEDALUS · ESTOQUE",en:"DAEDALUS · INVENTORY"},
       title:{pt:"Daedalus · controle de estoque",en:"Daedalus · inventory control"},
       summary:{pt:"Movimentações imutáveis, saldos, alertas e preparação para compras.",en:"Immutable movements, balances, alerts and purchasing readiness."},
@@ -164,6 +166,7 @@ window.PORTFOLIO = {
       category:"migration",
       accent:"violet",
       image:"assets/project-migration.webp",
+      mobileImage:"assets/project-migration-mobile.webp",
       tag:{pt:"KAIJU · MIGRAÇÃO",en:"KAIJU · MIGRATION"},
       title:{pt:"Kaiju · importação e validação",en:"Kaiju · import and validation"},
       summary:{pt:"Detecção de colunas, mapeamento, prévia e correção antes do commit.",en:"Column detection, mapping, preview and correction before commit."},
@@ -175,6 +178,7 @@ window.PORTFOLIO = {
       category:"security",
       accent:"green",
       image:"assets/project-minus.webp",
+      mobileImage:"assets/project-minus-mobile.webp",
       tag:{pt:"MINUS · SEGURANÇA",en:"MINUS · SECURITY"},
       title:{pt:"MINUS · segurança e auditoria",en:"MINUS · security and audit"},
       summary:{pt:"Validação de arquivos, políticas, quarentena e recibos de evidência.",en:"File validation, policy gates, quarantine and evidence receipts."},
@@ -186,6 +190,7 @@ window.PORTFOLIO = {
       category:"ecommerce",
       accent:"amber",
       image:"assets/project-ecommerce.webp",
+      mobileImage:"assets/project-ecommerce-mobile.webp",
       tag:{pt:"E-COMMERCE · WEB",en:"E-COMMERCE · WEB"},
       title:{pt:"Criação de sites para e-commerce",en:"E-commerce website creation"},
       summary:{pt:"Vitrine responsiva, catálogo, checkout e integração com a operação.",en:"Responsive storefront, catalog, checkout and operational integration."},

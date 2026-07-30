@@ -1,30 +1,19 @@
-# Rodolfo P Rodrigues · Developer Portfolio v0.6.9 RC
+# Rodolfo Portfolio v0.7.0 Mobile Fast
 
-## Changes
-
-- Removed the desktop Experience/mini-Method card.
-- Removed desktop navigation links and the obsolete mobile drawer.
-- Rebuilt the header using valid, non-nested interactive markup.
-- Enlarged and redistributed language and social controls.
-- Added Android portrait and landscape header layouts.
-- Preserved mobile dossier tabs.
+Project-first mobile release with reduced image decoding, no hidden desktop carousel on phones, native fonts, lighter effects and a floating diagnosis button.
 
 ## Preview
 
 ```bash
-bash scripts/serve.sh
+python3 -m http.server 8080 --bind 0.0.0.0
 ```
 
-## Validate
+## Deploy update
+
+Copy this release over the GitHub repository, then run:
 
 ```bash
-python3 scripts/validate_site.py
+git add -A
+git commit -m "Optimize mobile portfolio and project-first hero"
+git push origin main
 ```
-
-## Publish
-
-```bash
-bash scripts/publish.sh https://github.com/USERNAME/REPOSITORY.git "Publish developer portfolio"
-```
-
-Replace every `example.com` URL before a commercial launch.
