@@ -1,19 +1,27 @@
-# Rodolfo Portfolio v0.7.0 Mobile Fast
+# Rodolfo Portfolio · v0.7.8 Signature Mark
 
-Project-first mobile release with reduced image decoding, no hidden desktop carousel on phones, native fonts, lighter effects and a floating diagnosis button.
+Oxblood-and-antique-gold portfolio with the accepted CASTOR-family R mark installed as the site identity.
 
-## Preview
+## What changed
+
+- Replaced every browser, PWA, and device icon with the accepted flat oxblood R and faint dark-antique-gold halo.
+- Preserved a genuinely transparent canvas in SVG, PNG, Apple Touch, and ICO outputs.
+- Added the mark to the header identity, the desktop consulting dossier, the tablet identity band, the mobile profile card, and the footer signature.
+- Reused one cached SVG across the page rather than loading separate decorative images.
+- Added no new animation, backdrop blur, filter loop, or full-screen compositor layer.
+- Preserved the v0.7.5 performance controls, v0.7.6 header hover repair, and v0.7.7 unified dossier.
+
+## Preview locally
 
 ```bash
 python3 -m http.server 8080 --bind 0.0.0.0
 ```
 
-## Deploy update
+Open `http://localhost:8080`.
 
-Copy this release over the GitHub repository, then run:
+## Update the live repository
 
 ```bash
-git add -A
-git commit -m "Optimize mobile portfolio and project-first hero"
-git push origin main
+bash scripts/update_existing_repo.sh \
+  "$HOME/Cloud Money/rodolfo-portfolio-live"
 ```

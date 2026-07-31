@@ -4,21 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="Portfólio responsivo de Rodolfo P Rodrigues: modelagem financeira, controle de estoque, migração de planilhas e sistemas de decisão.">
-  <meta name="theme-color" content="#07111c">
-  <meta name="version" content="0.7.0">
+  <meta name="theme-color" content="#4a1419">
+  <meta name="version" content="0.7.8">
   <title>Rodolfo P Rodrigues · Portfólio</title>
   <meta property="og:title" content="Rodolfo P Rodrigues · Portfólio">
   <meta property="og:description" content="Modelagem financeira, controle de estoque, migração de dados e sistemas de decisão para pequenos negócios.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg?v=078" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/favicon-64.png" sizes="64x64" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme-red.css">
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand-identity" href="#inicio" aria-label="Voltar ao início">
+        <img class="brand-module-mark" src="assets/rodolfo-module-mark.svg" width="42" height="42" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
         <span class="brand-copy">
           <strong>Rodolfo Rodrigues</strong>
           <small data-copy="role">Consultor em sistemas logísticos e financeiros</small>
@@ -77,53 +85,48 @@
         <img class="portrait portrait-desktop" src="assets/portrait.webp" loading="lazy" decoding="async" alt="Retrato de Rodolfo P Rodrigues">
       </article>
 
-      <section class="identity-grid" id="visao">
-        <article class="profile-panel panel">
-          <div>
-            <p class="overline">Rodolfo P Rodrigues</p>
-            <h2 data-copy="role">Consultor em sistemas financeiros e operacionais</h2>
-            <p data-copy="location">Florianópolis · atendimento remoto</p>
-          </div>
-          <div class="profile-action-stack">
-            <div class="profile-actions">
+      <section class="identity-grid identity-grid-unified" id="visao">
+        <article class="panel consulting-dossier" id="servicos">
+          <header class="dossier-head">
+            <div class="dossier-identity">
+              <img class="identity-module-mark dossier-module-mark" src="assets/rodolfo-module-mark.svg" width="76" height="76" alt="" aria-hidden="true" decoding="async">
+              <div class="dossier-identity-copy">
+                <p class="overline">Rodolfo P Rodrigues</p>
+                <h2 data-copy="role">Consultor em sistemas financeiros e operacionais</h2>
+                <p data-copy="location">Florianópolis · atendimento remoto</p>
+              </div>
+            </div>
+            <div class="profile-actions dossier-actions">
               <a class="cta" href="https://example.com/diagnostico" target="_blank" rel="noreferrer" data-i18n="diagnosis">Solicitar diagnóstico</a>
               <button class="button-secondary" data-scroll="#projetos" type="button" data-i18n="viewProjects">Ver projetos</button>
               <a class="button-ghost" href="https://example.com" target="_blank" rel="noreferrer" data-i18n="commercialSite">Site comercial ↗</a>
             </div>
+          </header>
+
+          <div class="dossier-body">
+            <section class="dossier-about" aria-labelledby="dossier-about-title">
+              <p class="overline" data-i18n="about">Sobre</p>
+              <h3 id="dossier-about-title">Operação prática, modelagem rigorosa e software modular.</h3>
+              <p>Conecto finanças, estoque e dados para transformar operações fragmentadas em sistemas claros de decisão.</p>
+              <ul class="dossier-pains">
+                <li>Margem sem visibilidade</li>
+                <li>Estoque divergente</li>
+                <li>Planilhas incompatíveis</li>
+              </ul>
+            </section>
+
+            <section class="dossier-deliver" aria-labelledby="dossier-deliver-title">
+              <p class="overline" data-i18n="deliver">O que entrego</p>
+              <h3 id="dossier-deliver-title">Do diagnóstico à implementação.</h3>
+              <div id="desktopDeliverables" class="deliver-list dossier-deliver-list"></div>
+            </section>
           </div>
         </article>
-        <aside class="metrics-panel panel">
+
+        <aside class="metrics-panel panel metrics-panel-unified">
           <header><span data-i18n="distributionProof">Prova de distribuição</span><small data-i18n="last365">últimos 365 dias</small></header>
           <div class="metrics-grid" id="desktopMetrics"></div>
         </aside>
-      </section>
-
-      <section class="command-grid">
-        <article class="panel about-panel">
-          <p class="overline" data-i18n="about">Sobre</p>
-          <h3>Operação prática, modelagem rigorosa e software modular.</h3>
-          <p>Conecto finanças, estoque, migração de dados e automação analítica para resolver problemas reais de pequenos negócios.</p>
-          <ul>
-            <li>Preços sem visão real da margem</li>
-            <li>Estoque controlado por arquivos divergentes</li>
-            <li>Dados espalhados em planilhas incompatíveis</li>
-            <li>Decisões sem visão clara de caixa e risco</li>
-          </ul>
-        </article>
-
-        <article class="panel deliver-panel" id="servicos">
-          <p class="overline" data-i18n="deliver">O que entrego</p>
-          <div id="desktopDeliverables" class="deliver-list"></div>
-        </article>
-
-        <aside class="panel service-cta">
-          <div class="target-mark">◎</div>
-          <p class="overline" data-i18n="services">Serviços</p>
-          <h3>Do diagnóstico à implementação.</h3>
-          <p>Projetos personalizados para organizar números, estoque e decisões.</p>
-          <a href="https://example.com/diagnostico" target="_blank" rel="noreferrer" data-i18n="knowProcess">Conhecer o processo ↗</a>
-        </aside>
-
       </section>
 
       <section class="method-board panel" id="metodo">
@@ -152,7 +155,10 @@
       </article>
 
       <section class="tablet-identity panel">
-        <div><p class="overline">Rodolfo P Rodrigues</p><h2 data-copy="role">Consultor em sistemas financeiros e operacionais</h2></div>
+        <div class="tablet-identity-lockup">
+          <img class="identity-module-mark tablet-module-mark" src="assets/rodolfo-module-mark.svg" width="54" height="54" alt="" aria-hidden="true" decoding="async">
+          <div><p class="overline">Rodolfo P Rodrigues</p><h2 data-copy="role">Consultor em sistemas financeiros e operacionais</h2></div>
+        </div>
         <div class="tablet-action-stack">
           <a class="button-ghost" href="https://example.com" target="_blank" rel="noreferrer" data-i18n="commercialSite">Site comercial ↗</a>
         </div>
@@ -209,8 +215,13 @@
 
       <section class="mobile-panel" data-mobile-panel="overview">
         <article class="panel compact-panel mobile-profile-card">
-          <p class="overline">Rodolfo Rodrigues</p>
-          <h2 data-copy="role">Consultor em sistemas logísticos e financeiros</h2>
+          <div class="mobile-profile-lockup">
+            <img class="identity-module-mark mobile-module-mark" src="assets/rodolfo-module-mark.svg" width="50" height="50" alt="" aria-hidden="true" decoding="async">
+            <div>
+              <p class="overline">Rodolfo Rodrigues</p>
+              <h2 data-copy="role">Consultor em sistemas logísticos e financeiros</h2>
+            </div>
+          </div>
           <p data-copy="headline">Transformo planilhas dispersas em sistemas confiáveis de margem, estoque e decisão.</p>
         </article>
         <article class="panel compact-panel">
@@ -240,7 +251,10 @@
   </main>
 
   <footer>
-    <div><strong>Rodolfo P Rodrigues</strong><span data-i18n="footerFocus">Modelagem financeira · estoque · migração de dados</span></div>
+    <div class="footer-brand-lockup">
+      <img class="footer-module-mark" src="assets/rodolfo-module-mark.svg" width="34" height="34" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div><strong>Rodolfo P Rodrigues</strong><span data-i18n="footerFocus">Modelagem financeira · estoque · migração de dados</span></div>
+    </div>
     <div id="footerContacts" class="footer-contacts" aria-label="Canais de contato"></div>
   </footer>
 

@@ -1,0 +1,1366 @@
+/* ==========================================================
+   v0.7.1 Red Glass Theme
+   Reference direction: near-black left field flowing into
+   oxblood / brick-red light on the right, with warm copper
+   accents and restrained rose highlights.
+   Loaded after styles.css so this file is the single place
+   to tune the portfolio palette from now on.
+   ========================================================== */
+
+:root{
+  --bg:#070506;
+  --bg2:#100809;
+  --surface:#140b0d;
+  --surface2:#1d0f12;
+  --surface3:#291519;
+  --text:#f7f2ef;
+  --muted:#b8aaa6;
+  --gold:#c7835f;
+  --gold2:#e4a377;
+  --teal:#d45b55;
+  --line:rgba(244,220,213,.10);
+  --lineGold:rgba(228,163,119,.34);
+
+  --cyan:#d95b55;
+  --cyan-soft:rgba(217,91,85,.16);
+  --cyan-line:rgba(217,91,85,.36);
+  --violet:#b66573;
+  --gold-neon:#efb48d;
+  --gold-glow:rgba(228,145,99,.21);
+  --panel-top:rgba(42,18,22,.88);
+  --panel-bottom:rgba(8,6,8,.95);
+  --shadow-neon:0 26px 76px rgba(0,0,0,.58),0 0 0 1px rgba(217,91,85,.08),0 0 34px rgba(217,91,85,.055),0 0 48px rgba(228,145,99,.045);
+}
+
+html,
+body{
+  background-color:#050405;
+}
+
+body{
+  background:
+    radial-gradient(ellipse at 96% 7%,rgba(129,43,36,.43),transparent 31%),
+    radial-gradient(ellipse at 73% 28%,rgba(93,27,30,.30),transparent 43%),
+    radial-gradient(ellipse at 11% 86%,rgba(105,31,36,.12),transparent 34%),
+    linear-gradient(112deg,#030304 0%,#070506 34%,#1b0b0e 61%,#4d1818 100%);
+  color:var(--text);
+}
+
+body::before{
+  background-image:
+    linear-gradient(rgba(239,203,194,.012) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(239,203,194,.012) 1px,transparent 1px);
+}
+
+.grain::before{
+  background:linear-gradient(90deg,transparent,rgba(217,91,85,.26),rgba(228,145,99,.18),transparent);
+}
+.grain::after{
+  background:linear-gradient(90deg,transparent,rgba(182,101,115,.19),rgba(217,91,85,.15),transparent);
+}
+
+.topbar{
+  background:rgba(7,5,6,.91);
+  border-bottom-color:rgba(217,91,85,.18);
+  box-shadow:0 18px 55px rgba(0,0,0,.48),0 1px 0 rgba(255,255,255,.04) inset,0 -1px 0 rgba(217,91,85,.09) inset;
+}
+.topbar.scrolled{
+  background:rgba(7,5,6,.96);
+  box-shadow:0 24px 70px rgba(0,0,0,.60),0 -1px 0 rgba(217,91,85,.15) inset;
+}
+.brand-identity img,
+.brand img{
+  border-color:rgba(228,163,119,.48);
+  box-shadow:0 0 0 1px rgba(255,255,255,.035),0 0 22px rgba(217,91,85,.10);
+}
+
+.language-switch,
+.icon-button,
+.menu-toggle,
+.contact-button{
+  background:linear-gradient(145deg,rgba(29,14,17,.88),rgba(9,6,8,.95));
+  border-color:rgba(233,205,197,.15);
+}
+.language-switch button[aria-pressed="true"],
+.filter-group button.active{
+  background:rgba(197,76,67,.17);
+  border-color:rgba(228,163,119,.46);
+  color:#f2b58f;
+  box-shadow:inset 0 0 0 1px rgba(228,163,119,.10),0 0 18px rgba(197,76,67,.08);
+}
+.contact-button:hover,
+.contact-button:focus-visible,
+.icon-button:hover,
+.menu-toggle:hover{
+  border-color:rgba(217,91,85,.42);
+  box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 18px rgba(217,91,85,.09),inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+.panel{
+  background:
+    radial-gradient(520px circle at var(--mx,82%) var(--my,0%),rgba(140,45,39,.12),rgba(228,145,99,.035) 31%,transparent 58%),
+    linear-gradient(145deg,var(--panel-top),var(--panel-bottom));
+  border-color:rgba(235,211,204,.18);
+  box-shadow:0 34px 90px rgba(0,0,0,.58),0 12px 28px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.055),inset 0 -1px 0 rgba(0,0,0,.46);
+}
+.panel::before{
+  background:radial-gradient(480px circle at var(--mx,80%) var(--my,0%),rgba(217,91,85,.11),rgba(228,145,99,.04) 31%,transparent 57%);
+}
+.panel::after{
+  background:linear-gradient(90deg,transparent 4%,rgba(217,91,85,.38) 24%,rgba(255,255,255,.17) 52%,rgba(228,145,99,.33) 78%,transparent 96%);
+  box-shadow:0 0 16px rgba(217,91,85,.08);
+}
+.panel:hover{
+  border-color:rgba(217,91,85,.30);
+  box-shadow:var(--shadow-neon);
+}
+
+.hero-board{
+  background:
+    radial-gradient(circle at 91% 10%,rgba(143,46,39,.38),transparent 31%),
+    radial-gradient(circle at 69% 46%,rgba(92,25,29,.21),transparent 42%),
+    linear-gradient(104deg,#030304 0%,#080607 38%,#241014 67%,#561b1a 100%);
+  border-color:rgba(217,91,85,.22);
+  box-shadow:0 44px 125px rgba(0,0,0,.70),0 0 0 1px rgba(228,163,119,.06),inset 0 1px 0 rgba(255,255,255,.055);
+}
+.hero-board::before{
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.025),transparent 30%),
+    linear-gradient(180deg,rgba(217,91,85,.026),transparent 46%);
+}
+.hero-projects-panel{
+  background:
+    linear-gradient(120deg,rgba(8,7,8,.84) 0%,rgba(24,10,13,.79) 57%,rgba(73,22,22,.61) 100%);
+  border-color:rgba(233,205,197,.17);
+}
+
+.overline,
+.project-copy span,
+.method-step span,
+.mobile-method-entry button span,
+.metric small,
+.service-cta a{
+  color:#e99a73;
+}
+.about-panel li::before,
+.deliver-item svg,
+.mobile-service-card svg{
+  color:#d95b55;
+}
+
+.metric,
+.deliver-item,
+.method-step,
+.mobile-service-card,
+.tablet-about,
+.tablet-deliver,
+.compact-panel{
+  background:linear-gradient(145deg,rgba(31,14,17,.82),rgba(8,6,8,.92));
+  border-color:rgba(217,91,85,.16);
+}
+.metric:nth-child(even),
+.deliver-item:nth-child(even){
+  border-color:rgba(228,163,119,.19);
+}
+.metric::after{
+  background:rgba(217,91,85,.16);
+}
+.metric:nth-child(even)::after{
+  background:rgba(228,145,99,.18);
+}
+
+.service-cta{
+  border-color:rgba(228,163,119,.30);
+  background:
+    radial-gradient(circle at 24% 18%,rgba(228,145,99,.18),transparent 37%),
+    linear-gradient(145deg,rgba(60,27,25,.76),rgba(12,7,9,.94));
+}
+.target-mark{
+  color:#efb48d;
+  text-shadow:0 0 16px rgba(228,145,99,.24),0 0 42px rgba(197,76,67,.12);
+}
+
+.cta{
+  color:#1c0b0a;
+  background:linear-gradient(135deg,#f1c09e 0%,#df9369 48%,#b94f46 100%);
+  box-shadow:0 16px 36px rgba(151,54,46,.33),0 0 24px rgba(217,91,85,.09),inset 0 1px 0 rgba(255,255,255,.38);
+}
+.cta:hover{
+  box-shadow:0 24px 48px rgba(151,54,46,.43),0 0 32px rgba(217,91,85,.13),inset 0 1px 0 rgba(255,255,255,.44);
+}
+.button-secondary,
+.button-ghost,
+.deck-button{
+  background:linear-gradient(145deg,rgba(31,14,17,.82),rgba(8,6,8,.94));
+  border-color:rgba(217,91,85,.28);
+}
+.button-secondary:hover,
+.button-ghost:hover,
+.deck-button:hover{
+  border-color:rgba(217,91,85,.52);
+  background:#2a1115;
+  box-shadow:0 18px 38px rgba(0,0,0,.40),0 0 26px rgba(217,91,85,.09);
+}
+
+.filter-group button{
+  background:rgba(17,8,10,.76);
+  border-color:rgba(233,205,197,.14);
+  color:#d8cbc7;
+}
+.filter-group button:hover{
+  border-color:rgba(217,91,85,.38);
+  color:#fff6f2;
+}
+
+.project-card,
+.classic-deck-card,
+.deck-project-card{
+  border-color:rgba(217,91,85,.20)!important;
+  background:#090607!important;
+  box-shadow:0 18px 46px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.03);
+}
+.project-card:hover,
+.classic-deck-card:hover,
+.deck-project-card:hover{
+  border-color:rgba(217,91,85,.43)!important;
+  box-shadow:0 28px 68px rgba(0,0,0,.48),0 0 24px rgba(217,91,85,.055);
+}
+.classic-deck-card[data-accent="gold"],
+.deck-project-card[data-accent="gold"]{border-color:rgba(228,163,119,.32)!important}
+.classic-deck-card[data-accent="cyan"],
+.deck-project-card[data-accent="cyan"]{border-color:rgba(217,91,85,.32)!important}
+.classic-deck-card[data-accent="violet"],
+.deck-project-card[data-accent="violet"]{border-color:rgba(182,101,115,.31)!important}
+.classic-deck-card[data-accent="green"],
+.deck-project-card[data-accent="green"]{border-color:rgba(197,92,74,.30)!important}
+.classic-deck-card[data-accent="amber"],
+.deck-project-card[data-accent="amber"]{border-color:rgba(224,143,94,.31)!important}
+
+.project-card::after{
+  background:linear-gradient(90deg,transparent,#d95b55,#e4a377,transparent);
+}
+
+/* More transparent project descriptions. The image stays clearly visible
+   through the panel while the shadowed typography keeps the copy readable. */
+.classic-deck-card .project-copy-glass{
+  border-color:rgba(244,222,215,.12)!important;
+  background:linear-gradient(135deg,rgba(18,7,9,.16),rgba(6,4,5,.25))!important;
+  backdrop-filter:blur(7px) saturate(106%)!important;
+  -webkit-backdrop-filter:blur(7px) saturate(106%)!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.04)!important;
+  text-shadow:0 1px 7px rgba(0,0,0,.88);
+}
+.classic-deck-card .project-copy-glass::before{
+  background:linear-gradient(90deg,rgba(217,91,85,.018),transparent 50%,rgba(228,145,99,.018));
+}
+.classic-deck-card .project-copy-glass h4{
+  color:#fff8f4!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.92);
+}
+.classic-deck-card .project-copy-glass p{
+  color:#eee5e1!important;
+  text-shadow:0 1px 7px rgba(0,0,0,.95);
+}
+.classic-deck-card .project-copy-glass span{color:#de7067!important}
+.classic-deck-card[data-accent="gold"] .project-copy-glass span{color:#e7a477!important}
+.classic-deck-card[data-accent="cyan"] .project-copy-glass span{color:#dc6760!important}
+.classic-deck-card[data-accent="violet"] .project-copy-glass span{color:#c77a86!important}
+.classic-deck-card[data-accent="green"] .project-copy-glass span{color:#ce806c!important}
+.classic-deck-card[data-accent="amber"] .project-copy-glass span{color:#e69a68!important}
+
+.classic-deck-arrow{
+  background:rgba(15,7,9,.58);
+  border-color:rgba(233,205,197,.15);
+}
+.classic-deck-arrow:hover{
+  border-color:rgba(217,91,85,.42);
+}
+.classic-deck-dots button,
+.project-deck-dots button{
+  background:#5a393b;
+}
+.classic-deck-dots button.active,
+.project-deck-dots button.active,
+.project-deck-timer i{
+  background:linear-gradient(90deg,#d95b55,#e4a377);
+  box-shadow:0 0 12px rgba(217,91,85,.14);
+}
+
+.project-modal{
+  background:linear-gradient(145deg,rgba(32,13,16,.97),rgba(7,5,6,.99));
+  border-color:rgba(217,91,85,.29);
+  box-shadow:0 64px 175px rgba(0,0,0,.80),0 0 55px rgba(217,91,85,.07),0 0 75px rgba(228,145,99,.035),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.modal-close{
+  background:#12090b;
+  border-color:rgba(233,205,197,.16);
+}
+
+.experience-icon{
+  background:linear-gradient(145deg,rgba(47,18,22,.92),rgba(16,8,10,.96));
+  border:1px solid rgba(217,91,85,.20);
+  color:#dc6a61;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.method-track::before{
+  background:linear-gradient(90deg,transparent,rgba(217,91,85,.44),rgba(228,163,119,.48),rgba(182,101,115,.34),transparent);
+  box-shadow:0 0 16px rgba(217,91,85,.10);
+}
+.method-step:hover,
+.method-step.open{
+  border-color:rgba(217,91,85,.34);
+  background:linear-gradient(145deg,rgba(50,20,24,.86),rgba(10,6,8,.94));
+  box-shadow:0 22px 54px rgba(0,0,0,.44),0 0 25px rgba(217,91,85,.06);
+}
+
+@media (min-width:768px) and (max-width:1199px){
+  .tablet-hero{
+    background:
+      radial-gradient(circle at 91% 8%,rgba(143,46,39,.34),transparent 32%),
+      linear-gradient(104deg,#030304 0%,#0a0708 45%,#3f1517 100%);
+    border-color:rgba(217,91,85,.21);
+  }
+  .tablet-tabs{
+    background:linear-gradient(145deg,rgba(31,13,16,.84),rgba(8,6,8,.93));
+    border-color:rgba(217,91,85,.18);
+  }
+  .tab-list button[aria-selected="true"]{
+    color:#e7a477;
+    background:rgba(197,76,67,.16);
+  }
+}
+
+@media(max-width:767px){
+  body{
+    background:
+      radial-gradient(circle at 94% 0,rgba(133,42,36,.32),transparent 34%),
+      linear-gradient(180deg,#050405 0%,#1a0b0e 54%,#060405 100%);
+  }
+  .topbar,
+  .mobile-tabbar{
+    background:#090607f8!important;
+  }
+  .mobile-projects-hero{
+    background:
+      radial-gradient(circle at 88% 0,rgba(143,46,39,.24),transparent 35%),
+      linear-gradient(180deg,rgba(10,6,8,.36),transparent);
+  }
+  .mobile-featured-slot{
+    border-color:rgba(217,91,85,.25);
+    box-shadow:0 18px 40px rgba(0,0,0,.42),0 0 24px rgba(217,91,85,.035);
+  }
+  .mobile-featured-slot .hero-project-copy{
+    background:rgba(10,5,7,.49)!important;
+    border:1px solid rgba(244,222,215,.11);
+    box-shadow:0 10px 24px rgba(0,0,0,.20);
+    text-shadow:0 1px 7px rgba(0,0,0,.94);
+  }
+  .mobile-featured-slot .hero-project-copy small{
+    color:#eee5e1!important;
+  }
+  .mobile-tabbar button{
+    color:#dccfca;
+    background:linear-gradient(145deg,rgba(31,14,17,.90),rgba(8,6,8,.96));
+    border-color:rgba(233,205,197,.14);
+  }
+  .mobile-tabbar button[aria-selected="true"]{
+    color:#efad84;
+    background:rgba(197,76,67,.18);
+    border-color:rgba(228,163,119,.38);
+  }
+  .mobile-sticky-cta{
+    background:linear-gradient(135deg,#efb995,#d97c5e 54%,#b94f46 100%)!important;
+    color:#1c0b0a!important;
+    box-shadow:0 16px 38px rgba(0,0,0,.54),0 0 0 1px rgba(239,185,149,.24),0 0 24px rgba(217,91,85,.09)!important;
+  }
+}
+
+
+/* ==========================================================
+   v0.7.2 Red Orbits polish
+   Legibility, site-native scrollbar, larger controls, and a
+   restrained field of digital spheres over the red gradient.
+   ========================================================== */
+
+/* The browser's scrollbar now belongs to the interface instead of looking
+   like a bright operating-system rail laid over the red background. */
+html{
+  scrollbar-gutter:stable;
+  scrollbar-width:thin;
+  scrollbar-color:#a94440 #12080a;
+}
+*{
+  scrollbar-width:thin;
+  scrollbar-color:#a94440 #12080a;
+}
+::-webkit-scrollbar{
+  width:12px;
+  height:12px;
+}
+::-webkit-scrollbar-track{
+  background:linear-gradient(180deg,#0a0607 0%,#19090c 48%,#0a0607 100%);
+  border-left:1px solid rgba(239,180,141,.07);
+}
+::-webkit-scrollbar-thumb{
+  min-height:72px;
+  border:3px solid #110709;
+  border-radius:999px;
+  background:linear-gradient(180deg,#e0a078 0%,#b74f49 48%,#71231f 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 0 16px rgba(217,91,85,.16);
+}
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,#efb28a 0%,#cf6258 48%,#8d2d28 100%);
+}
+::-webkit-scrollbar-corner{background:#0a0607}
+
+/* Digital sphere field. Small orbital nodes add technological detail while
+   allowing the oxblood gradient to remain the dominant visual mass. */
+.digital-sphere-field{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:.82;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0 25%,rgba(0,0,0,.45) 48%,#000 70%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0 25%,rgba(0,0,0,.45) 48%,#000 70%,#000 100%);
+}
+.digital-sphere-field::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(circle,rgba(239,180,141,.34) 0 1px,transparent 1.25px);
+  background-size:44px 44px;
+  background-position:19px 11px;
+  opacity:.075;
+}
+.digital-sphere-field::after{
+  content:"";
+  position:absolute;
+  width:52vw;
+  height:52vw;
+  right:-18vw;
+  top:7vh;
+  border-radius:50%;
+  border:1px solid rgba(228,163,119,.075);
+  box-shadow:0 0 0 74px rgba(217,91,85,.018),0 0 0 148px rgba(217,91,85,.012);
+  transform:rotate(-12deg);
+}
+.digital-sphere{
+  --size:8px;
+  --alpha:.42;
+  --duration:14s;
+  --delay:0s;
+  position:absolute;
+  width:var(--size);
+  height:var(--size);
+  border-radius:50%;
+  border:1px solid rgba(239,180,141,.62);
+  background:
+    radial-gradient(circle at 36% 30%,rgba(255,244,237,.92) 0 9%,rgba(239,180,141,.78) 10% 22%,rgba(217,91,85,.50) 42%,rgba(91,22,25,.20) 68%,transparent 72%);
+  box-shadow:0 0 calc(var(--size)*1.2) rgba(217,91,85,.31),0 0 calc(var(--size)*2.7) rgba(217,91,85,.11);
+  opacity:var(--alpha);
+  animation:digital-sphere-drift var(--duration) ease-in-out var(--delay) infinite alternate;
+}
+.digital-sphere::before{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border:1px solid rgba(228,163,119,.20);
+  border-radius:50%;
+}
+.digital-sphere::after{
+  content:"";
+  position:absolute;
+  left:calc(100% + 7px);
+  top:50%;
+  width:clamp(12px,2vw,34px);
+  height:1px;
+  background:linear-gradient(90deg,rgba(228,163,119,.22),transparent);
+}
+.sphere-01{--size:7px;--alpha:.34;--duration:16s;--delay:-3s;left:58%;top:12%}
+.sphere-02{--size:12px;--alpha:.26;--duration:19s;--delay:-8s;left:76%;top:18%}
+.sphere-03{--size:5px;--alpha:.48;--duration:13s;--delay:-5s;left:91%;top:28%}
+.sphere-04{--size:9px;--alpha:.31;--duration:17s;--delay:-11s;left:67%;top:36%}
+.sphere-05{--size:6px;--alpha:.42;--duration:14s;--delay:-2s;left:84%;top:44%}
+.sphere-06{--size:14px;--alpha:.21;--duration:22s;--delay:-15s;left:95%;top:54%}
+.sphere-07{--size:8px;--alpha:.36;--duration:15s;--delay:-7s;left:61%;top:62%}
+.sphere-08{--size:4px;--alpha:.52;--duration:12s;--delay:-4s;left:73%;top:70%}
+.sphere-09{--size:11px;--alpha:.24;--duration:20s;--delay:-13s;left:88%;top:77%}
+.sphere-10{--size:6px;--alpha:.39;--duration:14s;--delay:-9s;left:53%;top:82%}
+.sphere-11{--size:5px;--alpha:.43;--duration:16s;--delay:-6s;left:79%;top:91%}
+.sphere-12{--size:9px;--alpha:.28;--duration:18s;--delay:-10s;left:97%;top:8%}
+@keyframes digital-sphere-drift{
+  0%{transform:translate3d(0,0,0) scale(.94);filter:brightness(.92)}
+  52%{transform:translate3d(-8px,10px,0) scale(1.05);filter:brightness(1.12)}
+  100%{transform:translate3d(5px,-8px,0) scale(.98);filter:brightness(1)}
+}
+main,
+footer{
+  position:relative;
+  z-index:1;
+}
+
+/* Header typography gains enough weight and contrast for small laptop and
+   mobile rendering without turning the identity block into a billboard. */
+.brand-copy strong{
+  color:#fff9f5;
+  font-size:1.04rem;
+  font-weight:820;
+  letter-spacing:.008em;
+  text-shadow:0 1px 12px rgba(0,0,0,.72);
+}
+.brand-copy small{
+  color:#d8c9c4;
+  font-size:.76rem;
+  font-weight:580;
+  letter-spacing:.012em;
+  line-height:1.28;
+  text-shadow:0 1px 10px rgba(0,0,0,.84);
+}
+
+/* Language glyphs and social controls carry more visual mass. */
+.language-switch-header{
+  min-height:48px;
+  padding:3px;
+}
+.language-switch-header button{
+  min-width:48px;
+  width:48px;
+  height:40px;
+  gap:6px;
+}
+.language-switch-header .flag-glyph{
+  width:24px;
+  height:16px;
+  stroke-width:1.25;
+  opacity:.72;
+}
+.language-switch-header button span{
+  font-size:.68rem;
+  font-weight:800;
+}
+.header-contact-row .contact-button{
+  flex-basis:46px!important;
+  width:46px!important;
+  min-width:46px!important;
+  height:46px!important;
+  border-radius:13px!important;
+}
+.header-contact-row .contact-button svg{
+  width:23px!important;
+  height:23px!important;
+  stroke-width:1.7;
+}
+
+/* Footer copy and labels were too fine at full-width desktop resolutions. */
+footer{
+  min-height:94px;
+  padding:25px 18px 31px;
+  border-top-color:rgba(228,163,119,.19);
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(110deg,rgba(9,5,7,.66),rgba(55,17,20,.32));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+  color:#cfc0bb;
+  font-size:.80rem;
+  line-height:1.45;
+}
+footer>div:first-child{
+  gap:17px;
+}
+footer strong{
+  color:#fff8f4;
+  font-size:.81rem;
+  font-weight:820;
+  letter-spacing:.01em;
+  text-shadow:0 1px 10px rgba(0,0,0,.78);
+}
+footer>div:first-child span{
+  color:#cdbdb8;
+  font-size:.78rem;
+  font-weight:540;
+  letter-spacing:.008em;
+}
+.footer-contacts .contact-button{
+  height:46px;
+  min-width:46px;
+  padding:0 14px;
+  gap:8px;
+}
+.footer-contacts .contact-button svg{
+  width:22px;
+  height:22px;
+}
+.footer-contacts .contact-button span{
+  color:#e9ddd9;
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.006em;
+}
+
+@media(max-width:900px){
+  .header-contact-row .contact-button{
+    flex-basis:42px!important;
+    width:42px!important;
+    min-width:42px!important;
+    height:42px!important;
+  }
+  .header-contact-row .contact-button svg{width:21px!important;height:21px!important}
+}
+
+@media(max-width:767px){
+  :root{--header-height:94px}
+  .topbar{height:var(--header-height);padding:7px 10px 6px}
+  .topbar-inner{grid-template-rows:35px 43px;gap:3px}
+  .brand-copy strong{font-size:.94rem}
+  .brand-copy small{
+    max-width:min(390px,calc(100vw - 26px));
+    font-size:.70rem;
+    font-weight:600;
+    white-space:nowrap;
+    overflow:visible;
+    text-overflow:clip;
+  }
+  .language-switch-header{height:42px;min-height:42px;padding:2px}
+  .language-switch-header button{width:41px;min-width:41px;height:36px;padding:0 4px}
+  .language-switch-header .flag-glyph{width:22px;height:15px}
+  .header-contact-row .contact-button{
+    flex-basis:38px!important;
+    width:38px!important;
+    min-width:38px!important;
+    height:38px!important;
+    border-radius:11px!important;
+  }
+  .header-contact-row .contact-button svg{width:20px!important;height:20px!important}
+  footer{
+    gap:17px;
+    min-height:0;
+    padding:24px 16px 34px;
+    font-size:.80rem;
+  }
+  footer>div:first-child{
+    display:grid;
+    gap:4px;
+  }
+  footer strong{font-size:.84rem}
+  footer>div:first-child span{font-size:.77rem;line-height:1.5}
+  .footer-contacts{gap:8px}
+  .footer-contacts .contact-button{width:44px;height:44px;min-width:44px;padding:0}
+  .footer-contacts .contact-button svg{width:22px;height:22px}
+  .digital-sphere-field{
+    opacity:.62;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0 8%,rgba(0,0,0,.55) 40%,#000 72%);
+    mask-image:linear-gradient(90deg,transparent 0 8%,rgba(0,0,0,.55) 40%,#000 72%);
+  }
+  .digital-sphere-field::before{background-size:38px 38px;opacity:.055}
+  .digital-sphere-field::after{width:80vw;height:80vw;right:-38vw;top:18vh}
+  .sphere-01,.sphere-04,.sphere-07,.sphere-10{display:none}
+}
+
+@media(max-width:374px){
+  :root{--header-height:96px}
+  .brand-copy small{font-size:.655rem;max-width:334px}
+  .header-utilities{gap:4px}
+  .language-switch-header button{width:37px;min-width:37px}
+  .language-switch-header .flag-glyph{width:20px;height:14px}
+  .header-contact-row{gap:4px!important}
+  .header-contact-row .contact-button{
+    flex-basis:35px!important;
+    width:35px!important;
+    min-width:35px!important;
+    height:35px!important;
+  }
+  .header-contact-row .contact-button svg{width:19px!important;height:19px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .digital-sphere{animation:none}
+}
+
+
+/* ==========================================================
+   v0.7.3 Oxblood + Antique Gold refinement
+   Gold is used as punctuation rather than wallpaper. The
+   oxblood field stays dominant; antique-gold lines, controls,
+   orbits and active states carry the refined/austere register.
+   ========================================================== */
+:root{
+  --gold:#a77a3f;
+  --gold2:#c8a65f;
+  --gold-neon:#dfc07b;
+  --gold-glow:rgba(200,166,95,.18);
+  --lineGold:rgba(200,166,95,.34);
+  --antique-gold:#b88e49;
+  --antique-gold-hi:#dbc17e;
+  --warm-ivory:#f1e7dc;
+}
+
+body{
+  background:
+    radial-gradient(ellipse at 96% 7%,rgba(119,34,35,.45),transparent 31%),
+    radial-gradient(ellipse at 73% 28%,rgba(84,23,28,.31),transparent 43%),
+    radial-gradient(ellipse at 11% 86%,rgba(92,27,32,.13),transparent 34%),
+    linear-gradient(112deg,#030304 0%,#080506 34%,#1b0b0f 61%,#4a1419 100%);
+}
+
+/* Better geometric centering for both locale choices. Equal cells, equal
+   baselines and fixed icon columns prevent the active PT state drifting. */
+.language-switch-header{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-auto-flow:column;
+  align-items:center;
+  justify-items:stretch;
+  width:122px;
+  min-width:122px;
+  min-height:50px;
+  height:50px;
+  padding:4px;
+  gap:2px;
+  border-color:rgba(200,166,95,.23);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 0 0 1px rgba(73,17,21,.24);
+}
+.language-switch-header button{
+  display:grid!important;
+  grid-template-columns:26px max-content;
+  place-content:center;
+  align-items:center;
+  justify-content:center;
+  column-gap:5px;
+  width:auto;
+  min-width:0;
+  height:42px;
+  margin:0;
+  padding:0 7px;
+  line-height:1;
+}
+.language-switch-header .flag-glyph{
+  display:block;
+  width:26px;
+  height:17px;
+  margin:0;
+  transform:none;
+  stroke-width:1.25;
+  transform-origin:center;
+}
+.language-switch-header button span{
+  display:block!important;
+  margin:0;
+  padding:0;
+  line-height:1;
+  transform:translateY(.25px);
+  font-size:.69rem;
+  font-weight:820;
+}
+.language-switch-header button[aria-pressed="true"]{
+  color:var(--antique-gold-hi);
+  border-color:rgba(219,193,126,.52);
+  background:linear-gradient(145deg,rgba(112,35,35,.30),rgba(41,13,16,.70));
+  box-shadow:inset 0 0 0 1px rgba(219,193,126,.08),0 0 20px rgba(86,25,27,.15);
+}
+.language-switch-header button[aria-pressed="true"] .flag-glyph{
+  color:var(--antique-gold-hi);
+  opacity:1;
+}
+
+/* Restrained gold punctuation across the page. */
+.overline,
+.project-copy-glass span,
+.classic-deck-counter,
+.target-mark{color:var(--antique-gold-hi)!important}
+.panel::after{
+  background:linear-gradient(90deg,transparent 4%,rgba(151,45,42,.34) 23%,rgba(219,193,126,.23) 52%,rgba(151,45,42,.30) 78%,transparent 96%);
+}
+.scroll-progress span{
+  background:linear-gradient(90deg,#8c292d 0%,var(--antique-gold-hi) 58%,#7d2529 100%);
+  box-shadow:0 0 12px rgba(200,166,95,.24);
+}
+.classic-deck-dot[aria-current="true"],
+.classic-deck-dot.active{
+  background:var(--antique-gold-hi)!important;
+  box-shadow:0 0 12px rgba(200,166,95,.35)!important;
+}
+.contact-button:hover,
+.contact-button:focus-visible,
+.icon-button:hover,
+.menu-toggle:hover{
+  border-color:rgba(200,166,95,.46);
+  box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 18px rgba(200,166,95,.08),inset 0 1px 0 rgba(255,255,255,.055);
+}
+footer{
+  border-top-color:rgba(200,166,95,.24);
+  background:linear-gradient(110deg,rgba(9,5,7,.72),rgba(55,16,21,.34));
+}
+
+/* Four gold-biased nodes seed the digital field without turning it into
+   decorative confetti. */
+.sphere-02,.sphere-05,.sphere-08,.sphere-11{
+  border-color:rgba(219,193,126,.70);
+  background:radial-gradient(circle at 36% 30%,rgba(255,249,229,.96) 0 9%,rgba(219,193,126,.88) 10% 24%,rgba(184,142,73,.50) 43%,rgba(87,54,22,.18) 69%,transparent 73%);
+  box-shadow:0 0 calc(var(--size)*1.2) rgba(200,166,95,.28),0 0 calc(var(--size)*2.7) rgba(200,166,95,.10);
+}
+.sphere-02::before,.sphere-05::before,.sphere-08::before,.sphere-11::before{border-color:rgba(219,193,126,.28)}
+.sphere-02::after,.sphere-05::after,.sphere-08::after,.sphere-11::after{background:linear-gradient(90deg,rgba(219,193,126,.26),transparent)}
+
+/* Scrollbar now follows oxblood + antique gold instead of copper-red. */
+::-webkit-scrollbar-track{border-left-color:rgba(200,166,95,.07)}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#d5b56f 0%,#9c6939 42%,#6f2226 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 0 16px rgba(200,166,95,.12);
+}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#e2c681 0%,#b37c43 42%,#84292d 100%)}
+*{scrollbar-color:#a77a3f #100709}
+
+@media(max-width:767px){
+  .language-switch-header{
+    width:112px;
+    min-width:112px;
+    height:44px;
+    min-height:44px;
+    padding:3px;
+  }
+  .language-switch-header button{
+    grid-template-columns:24px max-content;
+    height:38px;
+    padding:0 5px;
+    column-gap:4px;
+  }
+  .language-switch-header .flag-glyph{width:24px;height:16px}
+  .language-switch-header button span{display:block!important;font-size:.66rem}
+}
+
+@media(max-width:374px){
+  .language-switch-header{width:106px;min-width:106px}
+  .language-switch-header button{grid-template-columns:22px max-content;padding:0 4px;column-gap:3px}
+  .language-switch-header .flag-glyph{width:22px;height:15px}
+  .language-switch-header button span{display:block!important;font-size:.63rem}
+}
+
+/* ==========================================================
+   v0.7.4 Oxblood Weave header
+   A restrained tailoring-inspired micro-weave gives the top
+   bar material presence. Oxblood carries the field; antique
+   gold appears only in the seam, brand rail and quiet glints.
+   ========================================================== */
+.topbar{
+  isolation:isolate;
+  overflow:visible;
+  background:
+    radial-gradient(ellipse at 79% -165%,rgba(200,166,95,.10),transparent 47%),
+    linear-gradient(96deg,rgba(3,3,4,.985) 0%,rgba(10,5,7,.98) 38%,rgba(30,9,13,.97) 72%,rgba(62,17,22,.955) 100%);
+  border-bottom-color:rgba(200,166,95,.27);
+  box-shadow:
+    0 18px 55px rgba(0,0,0,.52),
+    inset 0 1px 0 rgba(255,248,235,.045),
+    inset 0 -1px 0 rgba(122,34,39,.46);
+}
+.topbar::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.72;
+  background-image:
+    repeating-linear-gradient(116deg,transparent 0 8px,rgba(241,231,220,.020) 8px 9px,transparent 9px 17px),
+    repeating-linear-gradient(64deg,transparent 0 8px,rgba(200,166,95,.016) 8px 9px,transparent 9px 17px),
+    linear-gradient(90deg,transparent 0 44%,rgba(110,29,35,.105) 72%,rgba(200,166,95,.022) 100%);
+  background-size:auto,auto,100% 100%;
+}
+.topbar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 91% 50%,rgba(134,38,42,.13),transparent 34%),
+    linear-gradient(90deg,transparent 0 49%,rgba(255,255,255,.012) 66%,transparent 87%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    inset 0 -1px 0 rgba(200,166,95,.075);
+}
+.topbar.scrolled{
+  background:
+    radial-gradient(ellipse at 79% -165%,rgba(200,166,95,.075),transparent 47%),
+    linear-gradient(96deg,rgba(3,3,4,.995) 0%,rgba(9,5,7,.992) 38%,rgba(27,8,12,.986) 72%,rgba(53,14,19,.98) 100%);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.64),
+    inset 0 1px 0 rgba(255,248,235,.035),
+    inset 0 -1px 0 rgba(200,166,95,.12);
+}
+.topbar-inner{
+  position:relative;
+  z-index:1;
+}
+.brand-identity{
+  position:relative;
+}
+.brand-identity::before{
+  content:"";
+  width:2px;
+  height:31px;
+  flex:0 0 2px;
+  margin-right:11px;
+  border-radius:99px;
+  background:linear-gradient(180deg,var(--antique-gold-hi) 0%,var(--antique-gold) 44%,#77242a 100%);
+  box-shadow:0 0 14px rgba(200,166,95,.15);
+}
+.brand-copy strong{
+  color:var(--warm-ivory);
+  text-shadow:0 1px 12px rgba(0,0,0,.76),0 0 18px rgba(200,166,95,.025);
+}
+.brand-copy small{
+  color:#cdbd9c;
+  text-shadow:0 1px 10px rgba(0,0,0,.88);
+}
+.header-utility-divider{
+  background:linear-gradient(transparent,rgba(200,166,95,.33),rgba(115,31,36,.34),transparent);
+}
+
+/* Header contact tooltips were clipped by the textured bar's old
+   overflow:hidden. Keep the texture local, while allowing labels to clear the
+   bottom seam. The glow is localized to the hovered control only: no animated
+   filters, no full-width compositing layer. */
+.header-contact-row,
+.header-contact-row .contact-button{
+  overflow:visible!important;
+}
+.header-contact-row .contact-button{
+  z-index:2;
+}
+.header-contact-row .contact-button::after{
+  left:50%!important;
+  right:auto!important;
+  top:calc(100% + 10px)!important;
+  z-index:240;
+  transform:translate(-50%,-4px)!important;
+  padding:6px 9px;
+  border:1px solid rgba(200,166,95,.38);
+  border-radius:7px;
+  background:rgba(7,4,5,.97);
+  color:var(--warm-ivory);
+  box-shadow:0 10px 24px rgba(0,0,0,.48),0 0 13px rgba(200,166,95,.13);
+  font-size:.64rem;
+  letter-spacing:.015em;
+}
+.header-contact-row .contact-button:hover::after,
+.header-contact-row .contact-button:focus-visible::after{
+  transform:translate(-50%,0)!important;
+}
+
+@media(hover:hover) and (pointer:fine){
+  .header-contact-row .contact-button:not(.is-disabled):hover,
+  .header-contact-row .contact-button:not(.is-disabled):focus-visible{
+    transform:translateY(-2px)!important;
+    background:linear-gradient(145deg,rgba(67,20,25,.88),rgba(13,7,9,.98));
+    border-color:rgba(219,193,126,.64)!important;
+    box-shadow:
+      0 0 0 1px rgba(219,193,126,.09),
+      0 0 17px rgba(200,166,95,.23),
+      0 10px 23px rgba(0,0,0,.42),
+      inset 0 1px 0 rgba(255,255,255,.08)!important;
+  }
+  .header-contact-row .contact-linkedin:hover,
+  .header-contact-row .contact-linkedin:focus-visible{
+    color:#79c5ff!important;
+    box-shadow:0 0 0 1px rgba(121,197,255,.12),0 0 17px rgba(73,164,235,.22),0 10px 23px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08)!important;
+  }
+  .header-contact-row .contact-commercial:hover,
+  .header-contact-row .contact-commercial:focus-visible{
+    color:var(--antique-gold-hi)!important;
+  }
+  .header-contact-row .contact-github:hover,
+  .header-contact-row .contact-github:focus-visible{
+    color:#fffaf2!important;
+    box-shadow:0 0 0 1px rgba(255,250,242,.10),0 0 16px rgba(255,250,242,.12),0 10px 23px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08)!important;
+  }
+  .header-contact-row .contact-whatsapp:not(.is-disabled):hover,
+  .header-contact-row .contact-whatsapp:not(.is-disabled):focus-visible{
+    color:#65e696!important;
+    box-shadow:0 0 0 1px rgba(101,230,150,.10),0 0 17px rgba(82,223,136,.18),0 10px 23px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08)!important;
+  }
+  .header-contact-row .contact-telegram:not(.is-disabled):hover,
+  .header-contact-row .contact-telegram:not(.is-disabled):focus-visible{
+    color:#72d2ff!important;
+    box-shadow:0 0 0 1px rgba(114,210,255,.10),0 0 17px rgba(93,199,255,.18),0 10px 23px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08)!important;
+  }
+}
+
+@media(hover:none),(pointer:coarse),(max-width:767px){
+  .header-contact-row .contact-button::after{display:none!important}
+}
+
+@media(max-width:900px){
+  .topbar{
+    background:
+      radial-gradient(ellipse at 82% -105%,rgba(200,166,95,.075),transparent 48%),
+      linear-gradient(104deg,rgba(3,3,4,.995),rgba(18,6,9,.99) 64%,rgba(48,13,18,.985));
+  }
+  .topbar::before{opacity:.56}
+  .brand-identity::before{display:none}
+  .brand-copy small{color:#c9b895}
+}
+
+@media(max-width:767px){
+  .topbar{
+    background:
+      radial-gradient(ellipse at 82% -105%,rgba(200,166,95,.065),transparent 48%),
+      linear-gradient(104deg,#030304 0%,#120609 66%,#351015 100%)!important;
+  }
+  .topbar::before{
+    opacity:.46;
+    background-image:
+      repeating-linear-gradient(116deg,transparent 0 9px,rgba(241,231,220,.017) 9px 10px,transparent 10px 19px),
+      repeating-linear-gradient(64deg,transparent 0 9px,rgba(200,166,95,.013) 9px 10px,transparent 10px 19px);
+  }
+  .brand-copy strong{color:#f3ebe2}
+  .brand-copy small{color:#c5b38e}
+}
+
+/* ==========================================================
+   v0.7.5 Fast Weave performance pass
+   Keeps the oxblood/gold identity while removing continuous
+   repaint sources introduced by the animated orbit field.
+   ========================================================== */
+
+/* The former 12-node animated sphere field is replaced by one static layer.
+   No filter animation, no masked full-viewport animation and no giant ring
+   box-shadow are kept alive while the reader scrolls. */
+.digital-sphere-field{display:none!important}
+body::before{
+  opacity:.58;
+  background-image:
+    radial-gradient(circle at 96% 8%,rgba(219,193,126,.38) 0 1.5px,transparent 2.7px),
+    radial-gradient(circle at 90% 20%,rgba(145,43,43,.44) 0 2px,transparent 3.4px),
+    radial-gradient(circle at 83% 36%,rgba(200,166,95,.24) 0 1px,transparent 2.2px),
+    radial-gradient(circle at 95% 53%,rgba(151,45,42,.36) 0 2.5px,transparent 4px),
+    radial-gradient(circle at 76% 69%,rgba(219,193,126,.25) 0 1.5px,transparent 2.7px),
+    radial-gradient(circle at 88% 84%,rgba(126,35,39,.36) 0 2px,transparent 3.5px),
+    linear-gradient(rgba(239,203,194,.010) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(239,203,194,.010) 1px,transparent 1px);
+  background-size:100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,46px 46px,46px 46px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0 28%,rgba(0,0,0,.32) 48%,#000 72%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0 28%,rgba(0,0,0,.32) 48%,#000 72%,#000 100%);
+}
+
+/* Remove the inherited blurred ambient layer. Its 36px blur was animated over
+   an area larger than the viewport and remained active even when idle. */
+body::after{display:none!important;animation:none!important;filter:none!important}
+
+/* The topbar is already 95-99% opaque. Live backdrop blur adds substantial
+   scroll compositing cost without a visible benefit. The weave stays intact. */
+.topbar{
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+
+/* The carousel moves image-backed cards. Blurring the image under the copy on
+   every frame is much more expensive than a transparent ink wash. */
+.classic-deck-card .project-copy-glass{
+  background:linear-gradient(135deg,rgba(18,7,9,.30),rgba(6,4,5,.42))!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+
+/* Keep meaningful carousel motion, remove ambient loops that consume frames
+   without communicating state. */
+.hero-art,
+.hero-board::before,
+.method-track::before,
+.project-card::after,
+.scroll-cue i::after{
+  animation:none!important;
+}
+.motion-ready .reveal{will-change:auto!important}
+
+/* Isolate moving deck geometry from the rest of the page without creating
+   permanent layers for every panel. */
+.project-deck-viewport{contain:layout paint}
+
+@media(max-width:767px){
+  /* Mobile receives the same visual idea directly in the document background,
+     avoiding any fixed full-screen decorative compositor layer. */
+  body{
+    background:
+      radial-gradient(circle at 92% 7%,rgba(219,193,126,.23) 0 1.5px,transparent 2.7px),
+      radial-gradient(circle at 84% 24%,rgba(139,39,42,.30) 0 2px,transparent 3.4px),
+      radial-gradient(circle at 95% 46%,rgba(200,166,95,.16) 0 1px,transparent 2.1px),
+      radial-gradient(circle at 79% 68%,rgba(123,34,39,.25) 0 2px,transparent 3.5px),
+      radial-gradient(circle at 91% 88%,rgba(200,166,95,.15) 0 1.5px,transparent 2.6px),
+      linear-gradient(180deg,#050405 0%,#1a0b0e 54%,#060405 100%)!important;
+  }
+  body::before{display:none!important}
+  .topbar::after{display:none!important}
+  .topbar::before{
+    opacity:.28!important;
+    background-image:
+      repeating-linear-gradient(116deg,transparent 0 12px,rgba(241,231,220,.014) 12px 13px,transparent 13px 25px),
+      repeating-linear-gradient(64deg,transparent 0 12px,rgba(200,166,95,.010) 12px 13px,transparent 13px 25px)!important;
+  }
+  .mobile-featured-slot,
+  .metric,
+  .compact-panel,
+  .mobile-service-card,
+  .mobile-method{
+    box-shadow:0 12px 28px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.025)!important;
+  }
+}
+
+/* ==========================================================
+   v0.7.7 Unified Dossier
+   One restrained page-entry transition, one consolidated
+   consulting card, and no duplicate desktop service CTA.
+   ========================================================== */
+
+/* Single one-shot transition. It moves one element, once, without blur. */
+main{
+  animation:portfolio-enter .48s cubic-bezier(.2,.78,.22,1) both;
+}
+@keyframes portfolio-enter{
+  from{opacity:0;transform:translateY(7px)}
+  to{opacity:1;transform:none}
+}
+.portrait-desktop{animation:none!important}
+
+.identity-grid-unified{
+  grid-template-columns:minmax(0,2.18fr) minmax(300px,.72fr);
+  align-items:stretch;
+}
+.consulting-dossier{
+  min-width:0;
+  padding:0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 0,rgba(110,29,35,.18),transparent 31%),
+    linear-gradient(145deg,rgba(28,12,15,.95),rgba(7,5,7,.985));
+  border-color:rgba(200,166,95,.20);
+  box-shadow:0 30px 78px rgba(0,0,0,.46),inset 0 1px 0 rgba(255,255,255,.035);
+}
+.dossier-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:28px;
+  padding:28px 30px 25px;
+}
+.dossier-identity{min-width:0}
+.dossier-identity h2{
+  max-width:620px;
+  margin:0;
+  color:var(--warm-ivory);
+  font-size:clamp(1.4rem,1.8vw,1.9rem);
+  line-height:1.08;
+  letter-spacing:-.035em;
+}
+.dossier-identity>p:last-child{
+  margin:8px 0 0;
+  color:#c8bbc0;
+  font-size:.82rem;
+}
+.dossier-actions{
+  max-width:470px;
+  display:grid;
+  grid-template-columns:1.22fr 1fr;
+  gap:8px;
+}
+.dossier-actions .cta{grid-column:1/-1}
+.dossier-actions .cta,
+.dossier-actions .button-secondary,
+.dossier-actions .button-ghost{
+  min-height:43px;
+  padding-inline:15px;
+  white-space:nowrap;
+}
+.dossier-body{
+  display:grid;
+  grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+  border-top:1px solid rgba(200,166,95,.13);
+  background:linear-gradient(90deg,rgba(255,255,255,.012),transparent 45%,rgba(110,29,35,.055));
+}
+.dossier-about,
+.dossier-deliver{
+  min-width:0;
+  padding:24px 28px 27px;
+}
+.dossier-deliver{
+  border-left:1px solid rgba(200,166,95,.13);
+}
+.dossier-body h3{
+  margin:0 0 10px;
+  color:#f2e9e2;
+  font-size:1.06rem;
+  line-height:1.34;
+}
+.dossier-about>p:not(.overline){
+  max-width:540px;
+  margin:0;
+  color:#c7bbc0;
+  font-size:.78rem;
+  line-height:1.65;
+}
+.dossier-pains{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  list-style:none;
+  padding:0;
+  margin:17px 0 0;
+}
+.dossier-pains li{
+  position:relative;
+  padding:7px 10px 7px 24px;
+  border:1px solid rgba(123,36,42,.30);
+  border-radius:999px;
+  background:rgba(8,5,7,.56);
+  color:#d9cfd0;
+  font-size:.68rem;
+  line-height:1;
+}
+.dossier-pains li::before{
+  content:"";
+  position:absolute;
+  left:10px;
+  top:50%;
+  width:5px;
+  height:5px;
+  margin-top:-2.5px;
+  border-radius:50%;
+  background:var(--antique-gold);
+  box-shadow:0 0 8px rgba(200,166,95,.24);
+}
+.dossier-deliver-list{
+  grid-template-columns:1fr 1fr;
+  margin-top:13px;
+}
+.dossier-deliver-list .deliver-item{
+  min-height:48px;
+  padding:10px 11px;
+  border-color:rgba(200,166,95,.15);
+  background:linear-gradient(145deg,rgba(19,8,10,.78),rgba(6,4,5,.90));
+}
+.dossier-deliver-list .deliver-item svg{
+  width:19px;
+  height:19px;
+  color:var(--antique-gold-hi);
+}
+.metrics-panel-unified{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  padding:22px;
+  background:
+    radial-gradient(circle at 88% 7%,rgba(110,29,35,.16),transparent 35%),
+    linear-gradient(145deg,rgba(25,11,14,.94),rgba(7,5,7,.985));
+  border-color:rgba(200,166,95,.17);
+}
+.metrics-panel-unified .metrics-grid{
+  flex:1;
+  align-content:stretch;
+}
+.metrics-panel-unified .metric{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+@media(min-width:1200px) and (max-width:1340px){
+  .dossier-head{grid-template-columns:1fr;gap:17px}
+  .dossier-actions{max-width:520px;grid-template-columns:1.15fr 1fr 1fr}
+  .dossier-actions .cta{grid-column:auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  main{animation:none!important}
+}
+
+
+/* ==========================================================
+   v0.7.8 Signature Mark Integration
+   The accepted flat-glow CASTOR-family R becomes the site's
+   signature at identity anchors. One cached SVG, no new motion.
+   ========================================================== */
+.brand-identity::before{display:none!important}
+.brand-module-mark,
+.identity-module-mark,
+.footer-module-mark{
+  display:block;
+  flex:0 0 auto;
+  object-fit:contain!important;
+  object-position:center;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.brand-module-mark{
+  width:39px!important;
+  height:39px!important;
+  opacity:.96;
+}
+.brand-identity{gap:11px}
+
+.dossier-identity{
+  display:grid;
+  grid-template-columns:76px minmax(0,1fr);
+  align-items:center;
+  gap:18px;
+}
+.dossier-identity-copy{min-width:0}
+.dossier-module-mark{
+  width:76px;
+  height:76px;
+  opacity:.94;
+}
+.dossier-identity-copy>p:last-child{
+  margin:8px 0 0;
+  color:#c8bbc0;
+  font-size:.82rem;
+}
+
+.tablet-identity-lockup,
+.mobile-profile-lockup,
+.footer-brand-lockup{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+.tablet-identity-lockup{gap:15px}
+.tablet-module-mark{width:54px;height:54px;opacity:.94}
+.mobile-profile-lockup{gap:12px;margin-bottom:12px}
+.mobile-profile-lockup>div{min-width:0}
+.mobile-profile-lockup .overline{margin-bottom:5px}
+.mobile-profile-lockup h2{margin:0!important}
+.mobile-module-mark{width:50px;height:50px;opacity:.95}
+
+.footer-brand-lockup{gap:11px!important}
+.footer-brand-lockup>div{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.footer-module-mark{width:34px;height:34px;opacity:.90}
+
+@media(max-width:1199px){
+  .dossier-identity{grid-template-columns:66px minmax(0,1fr);gap:15px}
+  .dossier-module-mark{width:66px;height:66px}
+}
+
+@media(max-width:900px){
+  .brand-module-mark{width:34px!important;height:34px!important}
+}
+
+@media(max-width:767px){
+  .brand-identity{gap:8px}
+  .brand-module-mark{width:28px!important;height:28px!important}
+  .footer-brand-lockup{align-items:flex-start}
+  .footer-brand-lockup>div{display:grid;gap:2px}
+  .footer-module-mark{width:30px;height:30px;margin-top:1px}
+}
+
+@media(max-width:374px){
+  .brand-module-mark{width:26px!important;height:26px!important}
+  .mobile-module-mark{width:46px;height:46px}
+}

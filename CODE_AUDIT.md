@@ -1,39 +1,25 @@
-# Code Audit · v0.6.9 Developer Page RC
+# Code Audit · v0.7.6 Module Crest + Local Neon
 
-## Fixed in this release
+## Hover regression
 
-- Removed invalid nested interactive elements from the header.
-- Removed the dead desktop navigation and mobile drawer code paths.
-- Removed the desktop Experience/mini-Method card.
-- Removed duplicate tablet and mobile contact rows.
-- Simplified `data-scroll` behavior.
-- Removed obsolete active-navigation work from the scroll handler.
-- Corrected Android horizontal overflow caused by left/right reveal transforms.
-- Enforced minimum 38 px header interaction targets in Android portrait and landscape.
-- Split GitHub Pages into build and deploy jobs.
-- Enabled hidden-file upload so `.nojekyll` is included.
-- Added Node 24 action execution compatibility.
-- Added local validation, preview and Git publishing scripts.
+The contact labels were still produced by `contact-button::after`. The v0.7.4 woven header introduced `overflow: hidden`, so the tooltip crossed the header seam and was clipped. Only a fragment remained visible below the bar.
 
-## Browser validation
+The correction changes the header boundary to `overflow: visible`, centers each pointer tooltip below its icon, raises it above the content seam and disables hover-only labels on touch/mobile layouts.
 
-Tested at:
+## Neon cost
 
-- 1833 × 900 desktop
-- 900 × 1000 tablet
-- 360 × 800 Android portrait
-- 412 × 915 Android portrait
-- 915 × 412 Android landscape
+The restored light is attached only to the hovered or keyboard-focused 42–46 px control. It uses a short-lived `box-shadow` and color change. It does not use `filter`, `backdrop-filter`, an infinite animation or a viewport-sized compositor layer. This is materially different from the effects removed in v0.7.5.
 
-No horizontal overflow, JavaScript errors, page errors or failed core interactions were detected.
+## Why the project repeatedly became heavy
 
-## Known release gates
+The main cause is cumulative CSS history. `styles.css` contains several generations of the interface and `theme-red.css` contains sequential v0.7.1–v0.7.5 theme passes. Parsing that CSS is not itself the main runtime cost, but the layered cascade makes it easy for a later visual pass to revive an older blur, animation, mask or clipping rule.
 
-- `example.com` remains in 22 places across `index.html` and `content.js`.
-- WhatsApp and Telegram require real URLs before enabling.
-- Final absolute `og:url` and `og:image` depend on the deployed domain.
-- Analytics should not be added without a privacy decision.
+The runtime-heavy patterns were large fixed layers, animated filters, live backdrop blur over moving images, masks and oversized shadow surfaces. Static WebP artwork and a localized hover shadow are much cheaper.
 
-## Deferred refactor
+## Hosting boundary
 
-`styles.css` contains historical override layers from the iterative design process. At roughly 87 KB uncompressed it is not a meaningful transfer-size blocker, especially under GitHub compression, but it is less maintainable than a consolidated design-system stylesheet. A full CSS rewrite was deferred because it would create unnecessary visual-regression risk immediately before deployment.
+GitHub Pages delivers static files. It can affect first-load latency and caching, but it does not execute the page after download. Scroll and hover smoothness are determined by the browser, decoded assets, DOM, CSS paint/compositing work, GPU/driver behavior and device limits.
+
+## Icon
+
+The old square monogram was replaced by a circular module-family mark: technical outer ring, dotted orbit, broad open `R`, antique-gold primary structure and an oxblood diagonal leg. The vector is canonical and fills the favicon canvas more aggressively at small sizes.

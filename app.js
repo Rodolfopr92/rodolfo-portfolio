@@ -25,7 +25,7 @@ const socialIcons={
 const t=v=>typeof v==="string"?v:(v?.[lang]??"");
 const ui=k=>t(C.ui?.[k]??k);
 const getMode=()=>innerWidth>=1200?"desktop":innerWidth>=768?"tablet":"mobile";
-const imageFor=(p,mobile=false)=>mobile?(p.mobileImage||p.image):p.image;
+const imageFor=(p,mobile=false,preview=false)=>mobile?(p.mobileImage||p.image):(preview?(p.previewImage||p.image):p.image);
 
 function syncText(){
  document.documentElement.lang=lang==="pt"?"pt-BR":"en";
@@ -42,14 +42,15 @@ function configureLinks(){
 function metricMarkup(m){return `<article class="metric"><strong>${m.value}</strong><span>${t(m.label)}</span><small>${t(m.note)}</small></article>`}
 function renderMetrics(sel){const e=$(sel);if(e)e.innerHTML=C.metrics.map(metricMarkup).join('')}
 function featured(){return C.projects.find(p=>p.id===C.featuredProjectId)||C.projects[0]}
-function heroProjectMarkup(mobile=false){const p=featured();return `<button class="hero-project-card" type="button" data-project="${p.id}" aria-label="${ui('openProject')}: ${t(p.title)}"><img src="${imageFor(p,mobile)}" alt="${t(p.title)}" ${mobile?'fetchpriority="high"':'loading="lazy" decoding="async"'}><span class="hero-project-scrim"></span><span class="hero-project-badge">${ui('featuredProject')}</span><span class="hero-project-copy"><strong>${t(p.title)}</strong><small>${t(p.summary)}</small><em>${ui('openProject')} ↗</em></span></button>`}
+function heroProjectMarkup(mobile=false){const p=featured();return `<button class="hero-project-card" type="button" data-project="${p.id}" aria-label="${ui('openProject')}: ${t(p.title)}"><img src="${imageFor(p,mobile,!mobile)}" alt="${t(p.title)}" ${mobile?'fetchpriority="high"':'loading="lazy" decoding="async" fetchpriority="low"'}><span class="hero-project-scrim"></span><span class="hero-project-badge">${ui('featuredProject')}</span><span class="hero-project-copy"><strong>${t(p.title)}</strong><small>${t(p.summary)}</small><em>${ui('openProject')} ↗</em></span></button>`}
 function deliverMarkup(){return C.services.map(s=>`<div class="deliver-item">${icons[s.icon]}<span>${t(s.title)}</span></div>`).join('')}
 function serviceMarkup(s,mobile=false){return `<article class="${mobile?'mobile-service-card':'method-card'}"><header>${icons[s.icon]}<h3>${t(s.title)}</h3></header><p>${mobile?t(s.detail):t(s.short)}</p><a href="${s.href}" target="_blank" rel="noreferrer">${lang==='pt'?'Conhecer serviço ↗':'Explore service ↗'}</a></article>`}
 function methodMarkup(m){return `<button class="method-step" type="button"><span>${m.n}</span><strong>${t(m.title)}</strong><p>${t(m.text)}</p></button>`}
 function experienceMarkup(){return C.experience.map((e,i)=>`<div class="experience-entry"><div class="experience-icon">${i?'▦':'◎'}</div><div><strong>${t(e.role)}</strong><span>${t(e.org)}</span><span>${e.period}</span></div></div>`).join('')}
 function projectCard(p,mobile=false,deck=false,clone=false){
- if(deck)return `<article class="project-card classic-deck-card${clone?' is-clone':''}" tabindex="${clone?'-1':'0'}" role="button" data-project="${p.id}" data-accent="${p.accent||'cyan'}" aria-hidden="${clone?'true':'false'}"><div class="project-visual"><img src="${p.image}" alt="${clone?'':t(p.title)}" ${clone?'aria-hidden="true"':''}><div class="project-copy project-copy-glass"><span>${t(p.tag)}</span><h4>${t(p.title)}</h4><p>${t(p.summary)}</p></div></div></article>`;
- return `<article class="project-card" tabindex="0" role="button" data-project="${p.id}" data-accent="${p.accent||'cyan'}"><img src="${imageFor(p,mobile)}" alt="${t(p.title)}" loading="lazy" decoding="async"><div class="project-copy"><span>${t(p.tag)}</span><h4>${t(p.title)}</h4><p>${t(p.summary)}</p></div></article>`
+ const src=imageFor(p,mobile,!mobile);
+ if(deck)return `<article class="project-card classic-deck-card${clone?' is-clone':''}" tabindex="${clone?'-1':'0'}" role="button" data-project="${p.id}" data-accent="${p.accent||'cyan'}" aria-hidden="${clone?'true':'false'}"><div class="project-visual"><img src="${src}" alt="${clone?'':t(p.title)}" loading="lazy" decoding="async" fetchpriority="${clone?'low':'auto'}" ${clone?'aria-hidden="true"':''}><div class="project-copy project-copy-glass"><span>${t(p.tag)}</span><h4>${t(p.title)}</h4><p>${t(p.summary)}</p></div></div></article>`;
+ return `<article class="project-card" tabindex="0" role="button" data-project="${p.id}" data-accent="${p.accent||'cyan'}"><img src="${src}" alt="${t(p.title)}" loading="lazy" decoding="async"><div class="project-copy"><span>${t(p.tag)}</span><h4>${t(p.title)}</h4><p>${t(p.summary)}</p></div></article>`
 }
 
 function renderContacts(){
@@ -61,7 +62,7 @@ function renderContacts(){
 function clearDeck(){clearTimeout(deckTimer);clearTimeout(deckTransitionTimer);const d=$('#desktopProjects');if(d){d.innerHTML='';d.style.transform='';d.style.transition=''}const dots=$('#projectDeckDots');if(dots)dots.innerHTML=''}
 function filtered(){return C.projects.filter(p=>activeFilter==='all'||p.category===activeFilter)}
 function deckStep(){const d=$('#desktopProjects'),c=d?.querySelector('.classic-deck-card');if(!d||!c)return 0;return c.getBoundingClientRect().width+parseFloat(getComputedStyle(d).gap||0)}
-function positionDeck(animate=true){const d=$('#desktopProjects');if(!d)return;d.style.transition=animate?`transform ${DECK_TRANSITION}ms cubic-bezier(.19,.78,.18,1)`:'none';d.style.transform=`translate3d(${-deckVisualIndex*deckStep()}px,0,0)`}
+function positionDeck(animate=true){const d=$('#desktopProjects');if(!d)return;d.style.willChange=animate?'transform':'auto';d.style.transition=animate?`transform ${DECK_TRANSITION}ms cubic-bezier(.19,.78,.18,1)`:'none';d.style.transform=`translate3d(${-deckVisualIndex*deckStep()}px,0,0)`}
 function updateDots(){const items=filtered(),dots=$('#projectDeckDots');if(dots)dots.innerHTML=items.map((p,i)=>`<button type="button" class="${i===deckIndex?'active':''}" data-deck-index="${i}" aria-label="${t(p.title)}"></button>`).join('')}
 function resetDeck(){clearTimeout(deckTimer);if(mode==='desktop'&&filtered().length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches)deckTimer=setTimeout(()=>moveDeck(1),DECK_INTERVAL)}
 function buildDeck(){if(mode!=='desktop')return;const d=$('#desktopProjects'),items=filtered();if(!d)return;deckIndex=Math.min(deckIndex,Math.max(0,items.length-1));if(items.length===1){deckVisualIndex=0;d.innerHTML=projectCard(items[0],false,true)}else{const pre=[items[(items.length-2+items.length)%items.length],items[items.length-1]],post=[items[0],items[1]];d.innerHTML=[...pre.map(p=>projectCard(p,false,true,true)),...items.map(p=>projectCard(p,false,true)),...post.map(p=>projectCard(p,false,true,true))].join('');deckVisualIndex=deckIndex+2}requestAnimationFrame(()=>positionDeck(false));updateDots();resetDeck()}
@@ -81,7 +82,8 @@ function render(){syncText();renderContacts();configureLinks();mode=getMode();if
 function showProject(id){const p=C.projects.find(x=>x.id===id);if(!p)return;$('#modalImage').src=imageFor(p,mode==='mobile');$('#modalImage').alt=t(p.title);$('#modalTag').textContent=t(p.tag);$('#modalTitle').textContent=t(p.title);$('#modalDetail').textContent=t(p.detail);$('#modalLink').href=p.href;$('#projectModal').showModal()}
 function activateMobileTab(name){$$('[data-mobile-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.mobileTab===name)));$$('[data-mobile-panel]').forEach(p=>p.hidden=p.dataset.mobilePanel!==name)}
 function activateTabletTab(name){$$('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===name)));$$('[data-panel]').forEach(p=>p.hidden=p.dataset.panel!==name)}
-function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;$('#scrollProgress')?.style.setProperty('transform',`scaleX(${max?Math.min(1,scrollY/max):0})`);$('.topbar')?.classList.toggle('scrolled',scrollY>16)}
+let lastTopbarScrolled=false;
+function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;$('#scrollProgress')?.style.setProperty('transform',`scaleX(${max?Math.min(1,scrollY/max):0})`);const next=scrollY>16;if(next!==lastTopbarScrolled){$('.topbar')?.classList.toggle('scrolled',next);lastTopbarScrolled=next}}
 function showToast(msg){const e=$('#siteToast');if(!e)return;e.textContent=msg;e.classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>e.classList.remove('show'),3000)}
 
 document.addEventListener('click',e=>{
@@ -99,7 +101,7 @@ document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.tar
 $('#projectPrev')?.addEventListener('click',()=>moveDeck(-1));$('#projectNext')?.addEventListener('click',()=>moveDeck(1));
 $('#modalClose')?.addEventListener('click',()=>$('#projectModal').close());$('#projectModal')?.addEventListener('click',e=>{if(e.target===$('#projectModal'))$('#projectModal').close()});
 $$('[data-scroll]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.scroll)?.scrollIntoView({behavior:'smooth',block:'start'})));
-addEventListener('scroll',()=>requestAnimationFrame(updateScroll),{passive:true});
+let scrollRaf=0;addEventListener('scroll',()=>{if(scrollRaf)return;scrollRaf=requestAnimationFrame(()=>{scrollRaf=0;updateScroll()})},{passive:true});
 let resizeTimer;addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const next=getMode();if(next!==mode)render();else if(mode==='desktop')positionDeck(false)},160)},{passive:true});
 try{lang=localStorage.getItem('portfolio-language')==='en'?'en':'pt'}catch{}
 document.documentElement.classList.add('js');render();updateScroll();

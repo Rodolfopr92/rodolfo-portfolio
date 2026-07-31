@@ -1,13 +1,14 @@
 # Asset Map
 
-| Asset | Dimensions | Source |
+| Asset family | Dimensions | Runtime role |
 |---|---:|---|
-| `project-finance.webp` | 2560 × 960 | Castor v0.2 render |
-| `project-inventory.webp` | 2560 × 960 | Daedalus v0.1 render |
-| `project-migration.webp` | 2560 × 960 | Kaiju v0.1 render |
-| `project-minus.webp` | 2560 × 960 | Approved MINUS concept |
-| `project-ecommerce.webp` | 2560 × 960 | Approved e-commerce concept |
+| `project-*.webp` | 2560 × 960 | Full project artwork, loaded when the modal opens |
+| `project-*-preview.webp` | 1600 × 600 | Desktop and tablet cards/carousel |
+| `project-*-mobile.webp` | 960 × 360 | Mobile featured project and project list |
 | `portrait.webp` | 720 × 720 | Existing approved portrait |
-| `favicon.svg` | Vector | Portfolio favicon |
+| `rodolfo-module-mark.svg` | Vector | Canonical accepted signature mark used in page identity anchors |
+| `favicon.svg` | Vector | Browser SVG favicon, byte-equivalent to the canonical mark |
+| `favicon-16.png`, `favicon-32.png`, `favicon-48.png`, `favicon-64.png`, `favicon.ico` | Multiple | Browser fallbacks |
+| `icon-192.png`, `icon-512.png`, `icon-1024.png`, `apple-touch-icon.png` | Multiple | PWA and device icons |
 
-Project labels and descriptions remain live HTML.
+The identity placements reuse the same SVG URL, so the browser decodes and caches one vector asset rather than separate decorative copies.
