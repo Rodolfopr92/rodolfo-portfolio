@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020b10">
+<title>HERMES · Route & Network Intelligence</title>
+<style>html,body{margin:0;min-height:100%;background:#020b10;color:#c4dcdd;font-family:system-ui,sans-serif}.boot{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px}.boot b{color:#8af5f4;letter-spacing:.18em}.boot small{display:block;margin-top:10px;color:#86a8aa}</style>
+</head>
+<body><div class="boot"><div><b>HERMES</b><small>Loading route & network intelligence…</small></div></div>
+<script>
+(async()=>{
+  const files=11;
+  try{
+    let b64='';
+    for(let i=0;i<files;i++){
+      const r=await fetch(`payload-${String(i).padStart(2,'0')}.txt`,{cache:'no-store'});
+      if(!r.ok) throw new Error(`payload ${i} HTTP ${r.status}`);
+      b64+=(await r.text()).trim();
+    }
+    const raw=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+    const stream=new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip'));
+    const html=await new Response(stream).text();
+    document.open(); document.write(html); document.close();
+  }catch(err){
+    document.body.innerHTML='<div class="boot"><div><b>HERMES</b><small>Publication loader failed: '+String(err).replace(/[<>&]/g,'')+'</small></div></div>';
+  }
+})();
+</script></body></html>
