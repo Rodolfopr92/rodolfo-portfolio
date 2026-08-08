@@ -21,8 +21,43 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+
+      - name: Materialize HERMES v0.4.2 as ordinary static HTML
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64
+          import gzip
+          import hashlib
+
+          expected_names = [f"payload-v042-{i:02d}.txt" for i in range(14)]
+          root = Path("hermes")
+          files = [root / name for name in expected_names]
+          missing = [str(path) for path in files if not path.is_file()]
+          if missing:
+              raise SystemExit("Missing HERMES publication chunks: " + ", ".join(missing))
+
+          encoded = "".join(path.read_text(encoding="utf-8").strip() for path in files)
+          html = gzip.decompress(base64.b64decode(encoded, validate=True))
+          digest = hashlib.sha256(html).hexdigest()
+          expected = "becde0c34b6696e2870e7460bd589247a9afb0460f223bdeb193db8bbb91599f"
+          if digest != expected:
+              raise SystemExit(f"HERMES SHA-256 mismatch: {digest} != {expected}")
+
+          target = root / "index.html"
+          target.write_bytes(html)
+          print(f"HERMES materialized: {target} ({len(html)} bytes) sha256={digest}")
+          PY
+
+          grep -q '<title>HERMES' hermes/index.html
+          grep -q 'maplibre' hermes/index.html
+          grep -q 'HermesRepositories' hermes/index.html
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6.0.0
+
       - name: Upload static site artifact
         uses: actions/upload-pages-artifact@v4
         with:
